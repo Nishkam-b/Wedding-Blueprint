@@ -47,7 +47,7 @@ button{font:inherit; color:inherit}
 @media (max-width:480px){ .brand small{display:none} .brand{font-size:18px} }
 @media (max-width:400px){ .tb-actions .icon-btn{display:none} }
 .nav{display:none; gap:4px; margin-left:auto}
-.nav button{background:none; border:0; padding:8px 12px; border-radius:999px; font-size:14px; color:var(--ink-2); cursor:pointer}
+.nav button{background:none; border:0; padding:8px 11px; border-radius:999px; font-size:14px; color:var(--ink-2); cursor:pointer; white-space:nowrap}
 .nav button:hover{color:var(--ink); background:var(--gold-soft)}
 .tb-actions{display:flex; gap:8px; margin-left:auto; align-items:center}
 .nav + .tb-actions{margin-left:8px}
@@ -55,7 +55,7 @@ button{font:inherit; color:inherit}
 .icon-btn:hover{border-color:var(--gold)}
 .icon-btn svg{width:18px; height:18px}
 
-@media (min-width:860px){ .nav{display:flex} }
+@media (min-width:1020px){ .nav{display:flex} .brand small{display:none} }
 
 /* Hero */
 .hero{padding:28px 0 60px; background:radial-gradient(70% 45% at 88% 8%, var(--glow), transparent 70%), radial-gradient(60% 40% at 0% 85%, var(--glow-2), transparent 70%)}
@@ -288,6 +288,31 @@ section.block{padding:64px 0 68px; scroll-margin-top:60px}
 .tweak h4{margin:0; font-size:15.5px; font-weight:600}
 .tweak blockquote{margin:0 0 12px; padding:12px 14px; background:var(--code); border:1px solid var(--line); border-radius:12px; font-size:14px; line-height:1.6}
 
+/* Done for you */
+#custom{background:var(--band-2)}
+.dfy{display:grid; gap:28px; padding:28px 22px; background:linear-gradient(160deg, var(--blush) 0%, var(--card) 55%, var(--sage-soft) 100%); border-color:var(--line-strong)}
+@media (min-width:860px){ .dfy{grid-template-columns:7fr 5fr; padding:44px; gap:44px} }
+.dfy-title{font-family:var(--serif); font-weight:500; font-size:clamp(32px, 7.4vw, 48px); line-height:1.06; margin:0 0 12px}
+.dfy-lede{color:var(--ink-2); font-size:16px; margin:0 0 18px; max-width:34em}
+.paid{display:flex; gap:12px; align-items:flex-start; padding:14px 16px; background:var(--card); border:1px solid var(--line); border-radius:14px; font-size:14px; color:var(--ink-2); margin-bottom:20px}
+.paid-tag{flex:none; font-size:12px; font-weight:700; color:#FFFFFF; background:var(--gold-ink); padding:4px 10px; border-radius:999px}
+.dfy-side h3{font-family:var(--serif); font-size:23px; font-weight:600; margin:0 0 12px}
+.gets{list-style:none; margin:0 0 24px; padding:0; display:grid; gap:10px}
+.gets li{display:flex; gap:10px; font-size:14.5px}
+.gets svg{flex:none; width:18px; height:18px; color:var(--sage); margin-top:3px}
+.flow{list-style:none; margin:0; padding:0; counter-reset:fl; display:grid; gap:12px}
+.flow li{counter-increment:fl; display:flex; gap:12px; align-items:flex-start; font-size:14.5px}
+.flow li::before{content:counter(fl); flex:none; width:28px; height:28px; border-radius:50%; background:var(--sage); color:var(--on-sage); display:grid; place-items:center; font-family:var(--serif); font-weight:600; font-size:16px; margin-top:-2px}
+.pill.gold-pill{border-color:var(--gold); color:var(--gold-ink); background:var(--gold-soft)}
+.nav button.sparkle{color:var(--gold-ink); background:var(--gold-soft); border:1px solid var(--gold); font-weight:600}
+.sparkle{position:relative; overflow:hidden; isolation:isolate; animation:glow 3.6s ease-in-out infinite}
+.sparkle::after{content:""; position:absolute; inset:0; z-index:-1; pointer-events:none; background:linear-gradient(110deg, transparent 32%, rgba(255,255,255,.85) 50%, transparent 68%); transform:translateX(-130%); animation:sheen 3.6s ease-in-out infinite}
+.twinkle{display:inline-block; color:var(--gold); margin-right:7px; animation:twinkle 2.4s ease-in-out infinite}
+@keyframes sheen{0%,55%{transform:translateX(-130%)}100%{transform:translateX(130%)}}
+@keyframes twinkle{0%,100%{opacity:.55; transform:scale(.8) rotate(0deg)}50%{opacity:1; transform:scale(1.18) rotate(25deg)}}
+@keyframes glow{0%,100%{box-shadow:0 0 0 0 rgba(184,145,90,0)}50%{box-shadow:0 0 0 5px rgba(184,145,90,.16)}}
+@media (prefers-reduced-motion: reduce){ .sparkle,.sparkle::after,.twinkle{animation:none} .sparkle::after{display:none} }
+
 /* Footer */
 .cta{margin:0; padding:68px 22px; text-align:center; color:#FBF5EA; background:radial-gradient(80% 120% at 50% 0%, rgba(217,184,119,.26), transparent 62%), var(--deep)}
 .cta h2{font-family:var(--serif); font-weight:500; font-size:clamp(30px, 7vw, 42px); line-height:1.1; margin:0 0 10px; color:#FBF5EA}
@@ -329,6 +354,7 @@ section.block{padding:64px 0 68px; scroll-margin-top:60px}
       <button type="button" data-go="ui">UI generator</button>
       <button type="button" data-go="prompts">Prompt library</button>
       <button type="button" data-go="launch">Music &amp; hosting</button>
+      <button type="button" class="sparkle" data-go="custom"><span class="twinkle" aria-hidden="true">✦</span>Get it made</button>
     </nav>
     <div class="tb-actions">
       <a class="icon-btn" href="https://instagram.com/nishkambhatia" target="_blank" rel="noopener" aria-label="Nishkam Bhatia on Instagram">
@@ -362,6 +388,7 @@ section.block{padding:64px 0 68px; scroll-margin-top:60px}
         <button type="button" class="pill" data-go="ui">UI Generator</button>
         <button type="button" class="pill" data-go="prompts">Prompt Library</button>
         <button type="button" class="pill" data-go="launch">Music &amp; Hosting</button>
+        <button type="button" class="pill gold-pill sparkle" data-go="custom"><span class="twinkle" aria-hidden="true">✦</span>Short on time? Get it made for you</button>
       </div>
     </div>
     <p class="byline">Creator playbook &amp; prompt library by <a href="https://instagram.com/nishkambhatia" target="_blank" rel="noopener">Nishkam Bhatia</a></p>
@@ -536,6 +563,40 @@ section.block{padding:64px 0 68px; scroll-margin-top:60px}
   </div>
 </section>
 
+<!-- DONE FOR YOU -->
+<section class="block" id="custom">
+  <div class="wrap">
+    <div class="card dfy reveal">
+      <div>
+        <p class="eyebrow">Done for you</p>
+        <h2 class="dfy-title">Want us to create your wedding invite?</h2>
+        <p class="dfy-lede">Short on time? Fill a 2-minute form and our team will design, build and host your invitation website for you, in your tradition, your colours and your exact family wording.</p>
+        <div class="paid"><span class="paid-tag">Paid service</span><span>Pricing depends on your number of functions, languages and add-ons. Our team shares a quote and timeline when they contact you, before any work starts.</span></div>
+        <div class="links">
+          <a class="btn solid" id="formBtn" href="https://ig.me/m/nishkambhatia" target="_blank" rel="noopener">Fill the form</a>
+          <a class="btn" id="dmBtn" href="https://ig.me/m/nishkambhatia" target="_blank" rel="noopener">Ask a question on Instagram</a>
+        </div>
+      </div>
+      <div class="dfy-side">
+        <h3>What you get</h3>
+        <ul class="gets">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>A custom design in your tradition and colours, with the 3D opening gate and falling petals</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Your family wording, every function with maps and calendar buttons, and a live countdown</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Your song, monogram, photos and a bilingual language toggle</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Hosted and ready to share on WhatsApp with one link</li>
+        </ul>
+        <h3>How it works</h3>
+        <ol class="flow">
+          <li>Fill the request form (about 2 minutes)</li>
+          <li>Our team contacts you with pricing and timeline</li>
+          <li>You send your card, photos and song, and we build it</li>
+          <li>You get your live invite link to share with guests</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="cta">
   <div class="wrap">
     <p class="eyebrow">Keep creating</p>
@@ -556,6 +617,9 @@ section.block{padding:64px 0 68px; scroll-margin-top:60px}
 document.documentElement.classList.add('js');
 (function(){
 'use strict';
+
+/* ---------- Paste your Google Form link here ---------- */
+const FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSceTZWudsXK8WNRoHM_ZVppbAyFsY0fhDETVFc-el9NXbF6FQ/viewform';
 
 /* ---------- Storage helpers ---------- */
 const store = {
@@ -1083,13 +1147,20 @@ document.getElementById('tweaks').innerHTML = tweaks.map((t, i) => `
   </div>`).join('');
 document.getElementById('tweaks').addEventListener('click', e => { const b = e.target.closest('[data-tweak]'); if (b) copy(tweaks[+b.dataset.tweak].p); });
 
+/* ---------- Done-for-you form link ---------- */
+(function(){
+  const fb = document.getElementById('formBtn'), dm = document.getElementById('dmBtn');
+  if (FORM_URL){ fb.href = FORM_URL; }
+  else { fb.textContent = 'Request via Instagram DM'; dm.style.display = 'none'; }
+})();
+
 /* ---------- Initial route from link (#sikh, #prompts …) ---------- */
 renderPrompt(false);
 const hash = (location.hash || '').replace('#', '');
 if (hash){
   const c = cultures.find(x => x.key === hash);
   if (c){ selectCulture(c.key, false); setTimeout(() => go('prompts'), 120); }
-  else if (['workflow','ui','prompts','launch'].includes(hash)) setTimeout(() => go(hash), 120);
+  else if (['workflow','ui','prompts','launch','custom'].includes(hash)) setTimeout(() => go(hash), 120);
 }
 
 /* ---------- Reveal on scroll ---------- */
