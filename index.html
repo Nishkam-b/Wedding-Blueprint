@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light only">
+<title>The AI Luxury Wedding Invitation Blueprint — Nishkam Bhatia</title>
+<meta name="description" content="Build a ₹25,000+ luxury digital wedding invite for ₹0 using AI. Free creator blueprint and prompt library by Nishkam Bhatia (@nishkambhatia).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Allura&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F8F3EA; --card:#FFFFFF; --line:#EADFC9; --line-strong:#DCC9A3;
+  --ink:#1F1C18; --ink-2:#5B544C; --ink-3:#8C8276;
+  --sage:#435743; --sage-soft:#E7ECE2; --gold:#B8915A; --gold-ink:#8E6935; --gold-soft:#F6ECDB;
+  --code:#FCF8F1; --on-sage:#FFFFFF; --topbar:rgba(248,243,234,.88); --shadow:0 14px 34px -16px rgba(84,66,38,.28);
+  --blush:#F4E0D7; --petal:#E8B4A5; --band:#EDF0E7; --band-2:#FFFDF9; --deep:#3E5240;
+  --glow:rgba(240,206,194,.55); --glow-2:rgba(198,213,188,.5);
+  --serif:'Cormorant Garamond', 'Cormorant', Garamond, 'Times New Roman', serif;
+  --sans:'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif;
+  color-scheme: light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html, body{background:#F8F3EA; color-scheme:light}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:env(safe-area-inset-top,0px); -webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--sans); font-size:16px; line-height:1.6; transition:background-color .35s ease, color .35s ease; overflow-x:hidden}
+body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px); z-index:10; background:var(--topbar); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px)}
+img,svg{max-width:100%}
+a{color:inherit}
+button{font:inherit; color:inherit}
+:focus-visible{outline:2px solid var(--gold); outline-offset:3px; border-radius:6px}
+.wrap{max-width:1080px; margin:0 auto; padding:0 20px}
+
+/* Top bar */
+.topbar{position:sticky; top:env(safe-area-inset-top,0px); z-index:20; background:var(--topbar); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex; align-items:center; gap:12px; height:60px}
+.brand{display:flex; align-items:center; gap:10px; text-decoration:none; font-family:var(--serif); font-size:20px; font-weight:600; letter-spacing:.01em; white-space:nowrap}
+.brand svg{width:22px; height:28px; flex:none}
+.brand small{font-family:var(--sans); font-size:12px; font-weight:500; color:var(--ink-3); letter-spacing:0}
+.brand{min-width:0; overflow:hidden}
+.tb-actions{flex:none}
+@media (max-width:480px){ .brand small{display:none} .brand{font-size:18px} }
+@media (max-width:400px){ .tb-actions .icon-btn{display:none} }
+.nav{display:none; gap:4px; margin-left:auto}
+.nav button{background:none; border:0; padding:8px 12px; border-radius:999px; font-size:14px; color:var(--ink-2); cursor:pointer}
+.nav button:hover{color:var(--ink); background:var(--gold-soft)}
+.tb-actions{display:flex; gap:8px; margin-left:auto; align-items:center}
+.nav + .tb-actions{margin-left:8px}
+.icon-btn{width:40px; height:40px; border-radius:999px; border:1px solid var(--line); background:var(--card); display:grid; place-items:center; cursor:pointer; text-decoration:none; transition:border-color .2s}
+.icon-btn:hover{border-color:var(--gold)}
+.icon-btn svg{width:18px; height:18px}
+
+@media (min-width:860px){ .nav{display:flex} }
+
+/* Hero */
+.hero{padding:28px 0 60px; background:radial-gradient(70% 45% at 88% 8%, var(--glow), transparent 70%), radial-gradient(60% 40% at 0% 85%, var(--glow-2), transparent 70%)}
+.arch{position:relative; max-width:600px; margin:0 auto; text-align:center; padding:clamp(92px, 24vw, 128px) clamp(26px, 7vw, 56px) 40px}
+.arch-svg{position:absolute; inset:0; width:100%; height:100%; pointer-events:none; overflow:visible}
+.arch-svg path{fill:none; stroke:var(--gold); vector-effect:non-scaling-stroke}
+.arch-svg .a1{stroke-width:1.4}
+.arch-svg .a2{stroke-width:.8; opacity:.7}
+.arch-svg .fill{fill:url(#archGrad); stroke:none}
+.sprig{position:absolute; bottom:-8px; width:74px; height:148px; color:var(--sage); pointer-events:none; z-index:1}
+.sprig-l{left:-20px}
+.sprig-r{right:-20px; transform:scaleX(-1)}
+.sprig .fl{fill:var(--petal)}
+.sprig .fc{fill:var(--gold)}
+@media (max-width:520px){ .sprig{width:54px; height:108px} .sprig-l{left:-14px} .sprig-r{right:-14px} }
+.arch .jump{position:relative; z-index:2}
+.script{font-family:'Allura', 'Segoe Script', cursive; font-size:clamp(30px, 7.5vw, 38px); color:var(--gold-ink); margin:16px 0 -8px; line-height:1.1}
+.draw{opacity:0; animation:archIn 1.4s ease .1s forwards}
+.draw.a2{animation-delay:.35s}
+@keyframes archIn{to{opacity:1}}
+.arch-svg{z-index:0}
+.arch > *:not(.arch-svg):not(.sprig){position:relative; z-index:2}
+.apex{position:absolute; left:50%; top:-7px; width:12px; height:12px; transform:translateX(-50%) rotate(45deg); border:1.4px solid var(--gold); background:var(--bg)}
+.badge{display:inline-block; font-size:10.5px; font-weight:600; letter-spacing:.14em; color:var(--gold-ink); border:1px solid var(--line-strong); background:var(--card); border-radius:999px; padding:7px 14px; line-height:1.4}
+.hero h1{font-family:var(--serif); font-weight:500; font-size:clamp(36px, 9.4vw, 60px); line-height:1.04; letter-spacing:-.01em; margin:22px 0 16px}
+.hero .sub{color:var(--ink-2); font-size:clamp(15px, 3.8vw, 17px); max-width:34em; margin:0 auto}
+.ornament{display:flex; align-items:center; justify-content:center; gap:10px; margin:26px auto 22px; color:var(--gold)}
+.ornament i{display:block; height:1px; width:56px; background:var(--gold); opacity:.6}
+.ornament b{width:7px; height:7px; transform:rotate(45deg); background:var(--petal); display:block}
+.jump{display:flex; flex-wrap:wrap; gap:8px; justify-content:center}
+.pill{border:1px solid var(--line-strong); background:var(--card); border-radius:999px; padding:10px 16px; font-size:14px; font-weight:500; cursor:pointer; transition:background .2s, border-color .2s, color .2s; min-height:42px}
+.pill:hover{border-color:var(--sage); color:var(--sage)}
+.pill.primary{background:var(--sage); border-color:var(--sage); color:var(--on-sage)}
+.pill.primary:hover{opacity:.9; color:var(--on-sage)}
+.byline{text-align:center; color:var(--ink-3); font-size:13px; margin:18px 0 0}
+.byline a{color:var(--gold-ink); text-decoration:none; font-weight:600}
+
+/* Sections */
+section.block{padding:64px 0 68px; scroll-margin-top:60px}
+#workflow, #launch{background:var(--band)}
+#ui{background:var(--band-2)}
+.eyebrow{font-size:11.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--gold-ink); font-weight:600; margin:0 0 10px}
+.sec-head{max-width:640px; margin-bottom:26px}
+.sec-head h2{font-family:var(--serif); font-weight:500; font-size:clamp(32px, 7vw, 44px); line-height:1.08; margin:0 0 10px; letter-spacing:-.005em}
+.sec-head p{color:var(--ink-2); margin:0}
+.card{background:var(--card); border:1px solid var(--line); border-radius:18px; box-shadow:var(--shadow)}
+
+/* Stage strip */
+.stages{display:grid; grid-template-columns:repeat(2, 1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:18px; overflow:hidden; margin-bottom:22px}
+.stage{background:var(--card); padding:16px}
+.stage .n{font-family:var(--serif); font-size:15px; color:var(--gold-ink); font-style:italic}
+.stage h3{font-size:15px; margin:2px 0 4px; font-weight:600}
+.stage p{font-size:13px; color:var(--ink-2); margin:0 0 8px; line-height:1.5}
+.stage .t{display:inline-block; font-size:12px; font-weight:600; color:var(--sage); background:var(--sage-soft); border-radius:999px; padding:3px 10px}
+@media (min-width:760px){ .stages{grid-template-columns:repeat(4,1fr)} }
+
+/* Step tabs */
+.steps-nav{display:flex; gap:8px; overflow-x:auto; padding:2px 2px 10px; margin:0 -2px; scrollbar-width:none}
+.steps-nav::-webkit-scrollbar{display:none}
+.step-btn{flex:none; display:flex; align-items:center; gap:10px; border:1px solid var(--line); background:var(--card); border-radius:999px; padding:6px 16px 6px 6px; cursor:pointer; font-size:14px; font-weight:500; color:var(--ink-2); transition:all .2s; min-height:44px}
+.step-btn .num{width:30px; height:30px; border-radius:50%; display:grid; place-items:center; font-family:var(--serif); font-size:17px; font-weight:600; border:1px solid var(--line-strong); color:var(--gold-ink); background:var(--bg)}
+.step-btn[aria-selected="true"]{border-color:var(--sage); color:var(--ink); background:var(--sage-soft)}
+.step-btn[aria-selected="true"] .num{background:var(--sage); color:var(--on-sage); border-color:var(--sage)}
+.step-panel{padding:22px; margin-top:6px}
+.step-panel[hidden]{display:none}
+.step-panel h3{font-family:var(--serif); font-size:28px; font-weight:500; margin:0 0 6px; line-height:1.15}
+.step-panel > p.lede{color:var(--ink-2); margin:0 0 18px; max-width:42em}
+.panel-in{animation:panelIn .35s ease}
+@keyframes panelIn{from{opacity:0; transform:translateY(6px)}to{opacity:1; transform:none}}
+
+/* Checklist */
+.progress{display:flex; align-items:center; gap:12px; margin-bottom:14px}
+.bar{flex:1; height:4px; background:var(--line); border-radius:4px; overflow:hidden}
+.bar span{display:block; height:100%; width:0; background:var(--sage); transition:width .4s ease}
+.progress small{font-size:13px; color:var(--ink-2); font-weight:600; white-space:nowrap}
+.check{display:flex; gap:14px; align-items:flex-start; padding:16px; border:1px solid var(--line); border-radius:14px; margin-bottom:10px; cursor:pointer; transition:border-color .2s, background .2s}
+.check:hover{border-color:var(--line-strong)}
+.check input{position:absolute; opacity:0; width:1px; height:1px}
+.box{flex:none; width:24px; height:24px; border-radius:7px; border:1.5px solid var(--line-strong); display:grid; place-items:center; margin-top:2px; transition:all .2s; background:var(--card)}
+.box svg{width:14px; height:14px; stroke:var(--on-sage); opacity:0; transform:scale(.6); transition:all .2s}
+.check input:checked ~ .box{background:var(--sage); border-color:var(--sage)}
+.check input:checked ~ .box svg{opacity:1; transform:none}
+.check input:focus-visible ~ .box{outline:2px solid var(--gold); outline-offset:2px}
+.check.done{background:var(--sage-soft); border-color:transparent}
+.check h4{margin:0 0 3px; font-size:15.5px; font-weight:600}
+.check p{margin:0; font-size:14px; color:var(--ink-2); line-height:1.55}
+.check code, .inline-code{font-family:var(--sans); font-size:.92em; background:var(--gold-soft); color:var(--gold-ink); padding:1px 6px; border-radius:5px; font-weight:600}
+.done-note{display:none; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-top:14px; padding:14px 16px; border-radius:14px; background:var(--gold-soft); font-size:14px}
+.done-note.show{display:flex}
+
+/* Builders */
+.builders{display:grid; gap:12px}
+@media (min-width:760px){ .builders{grid-template-columns:repeat(2,1fr)} .builders .featured{grid-column:1 / -1} }
+.builder{border:1px solid var(--line); border-radius:16px; padding:18px; display:flex; flex-direction:column; gap:8px}
+.builder.featured{border-color:var(--sage); background:var(--sage-soft)}
+.builder .bh{display:flex; align-items:center; justify-content:space-between; gap:10px}
+.builder h4{margin:0; font-family:var(--serif); font-size:23px; font-weight:600; line-height:1.15}
+.builder .tag{font-size:11.5px; font-weight:600; padding:4px 10px; border-radius:999px; background:var(--sage); color:var(--on-sage); white-space:nowrap}
+.builder .tag.soft{background:var(--gold-soft); color:var(--gold-ink)}
+.builder p{margin:0; font-size:14px; color:var(--ink-2)}
+.builder .why{color:var(--ink); font-size:14.5px}
+.links{display:flex; gap:8px; flex-wrap:wrap; margin-top:4px}
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; border-radius:999px; padding:10px 18px; font-size:14px; font-weight:600; cursor:pointer; border:1px solid var(--line-strong); background:var(--card); text-decoration:none; min-height:42px; transition:all .2s; white-space:nowrap}
+.btn:hover{border-color:var(--sage); color:var(--sage)}
+.btn.solid{background:var(--sage); border-color:var(--sage); color:var(--on-sage)}
+.btn.solid:hover{opacity:.9; color:var(--on-sage)}
+.btn.gold{background:var(--ink); border-color:var(--ink); color:var(--bg)}
+.btn.gold:hover{opacity:.88; color:var(--bg)}
+.btn svg{width:16px; height:16px; flex:none}
+.btn.sm{padding:7px 14px; min-height:36px; font-size:13px}
+
+.tip{border-left:2px solid var(--petal); background:var(--blush); padding:14px 16px; border-radius:0 12px 12px 0; font-size:14px; color:var(--ink-2); margin-top:16px}
+.tip strong{color:var(--ink); display:block; margin-bottom:2px; font-size:14.5px}
+
+/* UI guide */
+.ui-grid{display:grid; gap:16px}
+@media (min-width:900px){ .ui-grid{grid-template-columns:5fr 7fr; align-items:start} }
+.why-box{padding:20px}
+.why-box p{margin:0 0 16px; color:var(--ink-2); font-size:14.5px}
+.mini-steps{list-style:none; margin:0; padding:0; counter-reset:ms}
+.mini-steps li{counter-increment:ms; position:relative; padding:0 0 18px 46px; font-size:14.5px}
+.mini-steps li::before{content:counter(ms); position:absolute; left:0; top:-2px; width:32px; height:32px; border-radius:50%; border:1px solid var(--gold); display:grid; place-items:center; font-family:var(--serif); font-size:18px; font-weight:600; color:var(--gold-ink); background:var(--card)}
+.mini-steps li:not(:last-child)::after{content:""; position:absolute; left:16px; top:32px; bottom:2px; width:1px; background:var(--line-strong)}
+.mini-steps li:last-child{padding-bottom:0}
+.quote-line{display:flex; align-items:flex-start; gap:10px; justify-content:space-between; margin-top:10px; padding:12px 14px; background:var(--code); border:1px dashed var(--line-strong); border-radius:12px; font-size:13.5px; color:var(--ink)}
+
+.palette-pick{display:flex; flex-wrap:wrap; gap:6px; margin:0 0 12px}
+.chip{border:1px solid var(--line); background:var(--card); border-radius:999px; padding:7px 12px; font-size:13px; cursor:pointer; color:var(--ink-2); display:inline-flex; align-items:center; gap:6px; min-height:36px}
+.chip .dots{display:inline-flex}
+.chip .dots i{width:10px; height:10px; border-radius:50%; display:block; margin-left:-3px; border:1px solid rgba(0,0,0,.08)}
+.chip .dots i:first-child{margin-left:0}
+.chip[aria-pressed="true"]{border-color:var(--sage); color:var(--ink); background:var(--sage-soft)}
+.label-sm{font-size:13px; font-weight:600; color:var(--ink-2); margin:0 0 8px}
+
+/* Code box */
+.codebox{border:1px solid var(--line); border-radius:16px; background:var(--card); overflow:hidden}
+.code-head{display:flex; align-items:center; justify-content:space-between; gap:10px; padding:12px 14px 12px 18px; border-bottom:1px solid var(--line); flex-wrap:wrap}
+.code-head h4{margin:0; font-size:14px; font-weight:600}
+.code-head .meta{font-size:12.5px; color:var(--ink-3); font-weight:500}
+.code-body{position:relative}
+.code{margin:0; padding:18px; font-family:var(--sans); font-size:13.5px; line-height:1.7; white-space:pre-wrap; word-break:break-word; background:var(--code); color:var(--ink); max-height:420px; overflow:auto}
+.code.open{max-height:none}
+.code .ph{color:var(--gold-ink); background:var(--gold-soft); border-radius:4px; padding:0 3px; font-weight:600}
+.code mark{background:var(--sage-soft); color:var(--sage); border-radius:4px; padding:0 3px; font-weight:700}
+.fade{position:absolute; left:0; right:0; bottom:0; height:70px; background:linear-gradient(to bottom, transparent, var(--code)); pointer-events:none; transition:opacity .2s}
+.code.open + .fade{opacity:0}
+.code-foot{display:flex; gap:8px; justify-content:space-between; align-items:center; padding:12px 14px; border-top:1px solid var(--line); flex-wrap:wrap}
+
+/* Customizer */
+.custom{margin-bottom:18px; overflow:hidden}
+.custom-toggle{width:100%; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:16px 18px; background:none; border:0; cursor:pointer; text-align:left}
+.custom-toggle .ct-title{font-weight:600; font-size:15.5px; display:flex; align-items:center; gap:10px}
+.custom-toggle .ct-title svg{width:20px; height:20px; color:var(--gold)}
+.custom-toggle .opt{font-size:12px; font-weight:500; color:var(--ink-3)}
+.custom-toggle .chev{width:20px; height:20px; transition:transform .25s; flex:none}
+.custom-toggle[aria-expanded="true"] .chev{transform:rotate(180deg)}
+.custom-body{padding:0 18px 18px; display:none}
+.custom-body.open{display:block; animation:panelIn .3s ease}
+.fields{display:grid; gap:12px; grid-template-columns:1fr}
+@media (min-width:600px){ .fields{grid-template-columns:1fr 1fr} }
+@media (min-width:960px){ .fields{grid-template-columns:repeat(4,1fr)} }
+.field label{display:block; font-size:13px; font-weight:600; margin-bottom:6px; color:var(--ink-2)}
+.field input{width:100%; font:inherit; font-size:16px; padding:11px 14px; border:1px solid var(--line-strong); border-radius:12px; background:var(--bg); color:var(--ink); min-height:46px; transition:border-color .2s, background .2s}
+.field input:focus{outline:none; border-color:var(--sage); background:var(--card)}
+.custom-foot{display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap; margin-top:14px; font-size:13px; color:var(--ink-2)}
+.status-dot{display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--ink-3); margin-right:6px; vertical-align:1px}
+.status-dot.on{background:var(--sage)}
+
+/* Culture tabs */
+.ctabs{display:flex; gap:8px; overflow-x:auto; padding:2px 2px 12px; margin:0 -20px; padding-left:20px; padding-right:20px; scroll-snap-type:x proximity; scrollbar-width:none}
+.ctabs::-webkit-scrollbar{display:none}
+.ctab{flex:none; scroll-snap-align:start; border:1px solid var(--line); background:var(--card); border-radius:999px; padding:9px 16px; font-size:14px; font-weight:500; cursor:pointer; color:var(--ink-2); display:flex; align-items:center; gap:8px; min-height:44px; transition:all .2s}
+.ctab .e{font-size:17px; line-height:1}
+.ctab[aria-selected="true"]{background:var(--sage); color:var(--on-sage); border-color:var(--sage)}
+.prompt-card{overflow:hidden}
+.pc-strip{display:flex; height:6px}
+.pc-strip i{flex:1}
+.pc-head{padding:22px 20px 6px}
+.pc-head .num{font-family:var(--serif); font-style:italic; color:var(--gold-ink); font-size:16px}
+.pc-head h3{font-family:var(--serif); font-weight:500; font-size:clamp(26px, 6vw, 34px); line-height:1.12; margin:2px 0 6px}
+.pc-head .theme{font-size:13.5px; color:var(--ink-2)}
+.pc-body{padding:14px 20px 22px; display:grid; gap:20px}
+.swatches{display:flex; flex-wrap:wrap; gap:14px 10px}
+.sw{display:flex; flex-direction:column; align-items:center; gap:6px; background:none; border:0; cursor:pointer; padding:4px; border-radius:12px; width:72px}
+.sw .c{width:46px; height:46px; border-radius:50%; border:1px solid var(--line-strong); box-shadow:inset 0 0 0 3px var(--card); transition:transform .2s}
+.sw:hover .c{transform:scale(1.07)}
+.sw .nm{font-size:11.5px; font-weight:600; line-height:1.25; text-align:center; color:var(--ink)}
+.sw .hx{font-size:11px; color:var(--ink-3); letter-spacing:.02em}
+.spec{display:grid; gap:16px}
+@media (min-width:760px){ .spec{grid-template-columns:1fr 1fr} }
+.badges{display:flex; flex-wrap:wrap; gap:6px}
+.bdg{font-size:12.5px; border:1px solid var(--line); border-radius:999px; padding:5px 11px; background:var(--bg); color:var(--ink)}
+.bdg.font{font-family:var(--serif); font-size:14.5px; font-weight:600}
+.bdg b{font-weight:600; color:var(--gold-ink); margin-right:4px}
+.facts{display:grid; grid-template-columns:auto 1fr; gap:6px 14px; font-size:13.5px; margin:0}
+.facts dt{color:var(--ink-3); font-weight:500}
+.facts dd{margin:0; color:var(--ink)}
+.how{font-size:14px; color:var(--ink-2); margin:0}
+
+/* Launch */
+.launch-grid{display:grid; gap:12px}
+@media (min-width:760px){ .launch-grid{grid-template-columns:repeat(3,1fr)} }
+.lcard{padding:20px}
+.lcard h3{font-family:var(--serif); font-size:23px; font-weight:600; margin:0 0 8px; line-height:1.2}
+.lcard p{font-size:14px; color:var(--ink-2); margin:0}
+.lcard .ico{width:38px; height:38px; border-radius:50%; background:var(--sage-soft); display:grid; place-items:center; margin-bottom:12px; color:var(--sage)}
+.lcard .ico svg{width:19px; height:19px}
+.audio-note{padding:18px 20px; margin-bottom:12px; display:flex; gap:14px; align-items:flex-start}
+.audio-note p{margin:0; font-size:14.5px; color:var(--ink-2)}
+.audio-note strong{color:var(--ink)}
+.hosts{display:grid; gap:12px; margin-top:28px}
+@media (min-width:760px){ .hosts{grid-template-columns:repeat(2,1fr)} }
+.host{padding:20px; display:flex; flex-direction:column; gap:10px}
+.host .hh{display:flex; justify-content:space-between; align-items:flex-start; gap:10px}
+.host h4{margin:0; font-family:var(--serif); font-size:24px; font-weight:600; line-height:1.15}
+.host .domain{font-size:12.5px; color:var(--ink-3)}
+.host .cost{display:flex; flex-direction:column; align-items:flex-end; gap:4px}
+.host .free{font-size:12px; font-weight:700; color:var(--sage); background:var(--sage-soft); padding:3px 10px; border-radius:999px; white-space:nowrap}
+.host .kind{font-size:12px; color:var(--gold-ink); font-weight:600}
+.host p{margin:0; font-size:14px; color:var(--ink-2); flex:1}
+.host .ex{font-size:13px; display:flex; align-items:center; justify-content:space-between; gap:8px; flex-wrap:wrap; padding-top:10px; border-top:1px dashed var(--line-strong)}
+.host .ex span{color:var(--ink-3)}
+.host .ex b{font-weight:600; color:var(--ink)}
+.h3-sub{font-family:var(--serif); font-size:28px; font-weight:500; margin:40px 0 6px}
+.p-sub{color:var(--ink-2); margin:0 0 16px; font-size:15px}
+.tweaks{display:grid; gap:12px}
+.tweak{padding:18px 18px 16px}
+.tweak .th{display:flex; align-items:baseline; gap:10px; margin-bottom:8px}
+.tweak .th .n{font-family:var(--serif); font-size:22px; color:var(--gold-ink); font-weight:600}
+.tweak h4{margin:0; font-size:15.5px; font-weight:600}
+.tweak blockquote{margin:0 0 12px; padding:12px 14px; background:var(--code); border:1px solid var(--line); border-radius:12px; font-size:14px; line-height:1.6}
+
+/* Footer */
+.cta{margin:0; padding:68px 22px; text-align:center; color:#FBF5EA; background:radial-gradient(80% 120% at 50% 0%, rgba(217,184,119,.26), transparent 62%), var(--deep)}
+.cta h2{font-family:var(--serif); font-weight:500; font-size:clamp(30px, 7vw, 42px); line-height:1.1; margin:0 0 10px; color:#FBF5EA}
+.cta p{color:rgba(251,245,234,.82); margin:0 auto 24px; max-width:32em}
+.cta .eyebrow{color:#E2C68E}
+.cta .btn.gold{background:#D9B877; border-color:#D9B877; color:#1F1C18}
+.cta .btn.gold:hover{color:#1F1C18}
+.cta .btn:not(.gold){background:transparent; border-color:rgba(251,245,234,.45); color:#FBF5EA}
+.cta .btn:not(.gold):hover{border-color:#FBF5EA; color:#FBF5EA}
+.cta .links{justify-content:center}
+.foot{text-align:center; font-size:12.5px; color:var(--ink-3); padding:24px 0 40px}
+
+/* Toast */
+.toast{position:fixed; left:50%; bottom:calc(22px + env(safe-area-inset-bottom,0px)); transform:translate(-50%, 20px); background:var(--deep); color:#FBF5EA; padding:11px 20px; border-radius:999px; font-size:14px; font-weight:600; opacity:0; pointer-events:none; transition:opacity .25s, transform .25s; z-index:50; white-space:nowrap; box-shadow:0 8px 28px rgba(0,0,0,.18)}
+.toast.show{opacity:1; transform:translate(-50%, 0)}
+
+/* Reveal */
+.js .reveal{opacity:0; transform:translateY(14px); transition:opacity .7s ease, transform .7s ease}
+.js .reveal.in{opacity:1; transform:none}
+@media (prefers-reduced-motion: reduce){
+  .js .reveal{opacity:1; transform:none; transition:none}
+  .draw{animation:none; opacity:1}
+  .panel-in,.custom-body.open{animation:none}
+}
+.sr{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+@media print{ .topbar,.toast,.jump{display:none} .code{max-height:none} .fade{display:none} }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#" id="brandLink" aria-label="Back to top">
+      <svg viewBox="0 0 22 28" aria-hidden="true"><path d="M2 28V13C2 8 5 5.5 8 4.2 9.5 3.5 10.6 2.4 11 1c.4 1.4 1.5 2.5 3 3.2 3 1.3 6 3.8 6 8.8v15" fill="none" stroke="var(--gold)" stroke-width="1.5"/></svg>
+      <span>Wedding Blueprint <small>by Nishtek</small></span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <button type="button" data-go="workflow">Workflow</button>
+      <button type="button" data-go="ui">UI generator</button>
+      <button type="button" data-go="prompts">Prompt library</button>
+      <button type="button" data-go="launch">Music &amp; hosting</button>
+    </nav>
+    <div class="tb-actions">
+      <a class="icon-btn" href="https://instagram.com/nishkambhatia" target="_blank" rel="noopener" aria-label="Nishkam Bhatia on Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>
+      </a>
+      <button type="button" class="btn solid sm" data-go="prompts">Get prompts</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="arch">
+      <svg class="arch-svg" viewBox="0 0 300 420" preserveAspectRatio="none" aria-hidden="true">
+        <defs><linearGradient id="archGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--blush)"/><stop offset=".5" style="stop-color:var(--card)"/><stop offset="1" style="stop-color:var(--sage-soft)"/></linearGradient></defs>
+        <path class="fill" d="M10 420V180C10 110 60 70 110 50C130 42 145 30 150 10C155 30 170 42 190 50C240 70 290 110 290 180V420Z"/>
+        <path class="a1 draw" pathLength="1" d="M10 420V180C10 110 60 70 110 50C130 42 145 30 150 10C155 30 170 42 190 50C240 70 290 110 290 180V420"/>
+        <path class="a2 draw" pathLength="1" d="M22 420V184C22 120 68 84 114 64C133 56 145 44 150 26C155 44 167 56 186 64C232 84 278 120 278 184V420"/>
+      </svg>
+      <svg class="sprig sprig-l" viewBox="0 0 80 160" aria-hidden="true"><path d="M44 158C42 118 36 76 22 14" fill="none" stroke="currentColor" stroke-width="1.4"/><g fill="currentColor" opacity=".85"><ellipse cx="36" cy="36" rx="5" ry="12" transform="rotate(35 36 36)"/><ellipse cx="24" cy="58" rx="5" ry="12" transform="rotate(-40 24 58)"/><ellipse cx="43" cy="78" rx="5" ry="12" transform="rotate(40 43 78)"/><ellipse cx="29" cy="100" rx="5" ry="12" transform="rotate(-45 29 100)"/><ellipse cx="49" cy="120" rx="5" ry="12" transform="rotate(45 49 120)"/><ellipse cx="22" cy="14" rx="4" ry="9" transform="rotate(-15 22 14)"/></g><circle class="fl" cx="16" cy="138" r="10"/><circle class="fc" cx="16" cy="138" r="3"/><circle class="fl" cx="34" cy="150" r="7"/><circle class="fc" cx="34" cy="150" r="2.2"/></svg>
+      <svg class="sprig sprig-r" viewBox="0 0 80 160" aria-hidden="true"><path d="M44 158C42 118 36 76 22 14" fill="none" stroke="currentColor" stroke-width="1.4"/><g fill="currentColor" opacity=".85"><ellipse cx="36" cy="36" rx="5" ry="12" transform="rotate(35 36 36)"/><ellipse cx="24" cy="58" rx="5" ry="12" transform="rotate(-40 24 58)"/><ellipse cx="43" cy="78" rx="5" ry="12" transform="rotate(40 43 78)"/><ellipse cx="29" cy="100" rx="5" ry="12" transform="rotate(-45 29 100)"/><ellipse cx="49" cy="120" rx="5" ry="12" transform="rotate(45 49 120)"/><ellipse cx="22" cy="14" rx="4" ry="9" transform="rotate(-15 22 14)"/></g><circle class="fl" cx="16" cy="138" r="10"/><circle class="fc" cx="16" cy="138" r="3"/><circle class="fl" cx="34" cy="150" r="7"/><circle class="fc" cx="34" cy="150" r="2.2"/></svg>
+      <span class="badge">FREE AI CREATOR BLUEPRINT BY @NISHKAMBHATIA</span>
+      <h1>Build a ₹25,000+ Luxury Digital Wedding Invite for ₹0 Using AI</h1>
+      <p class="sub">A 10-minute, no-code workflow: gather 4 inputs, make a UI reference, paste one cultural prompt and publish free. You get a mobile invitation website with 3D opening palace doors, multi-layer falling petals, bilingual script, music and a live countdown.</p>
+      <p class="script">Invite, celebrate, together</p>
+      <div class="ornament" aria-hidden="true"><i></i><b></b><i></i></div>
+      <div class="jump" role="navigation" aria-label="Jump to">
+        <button type="button" class="pill primary" data-go="workflow">5-Step Workflow</button>
+        <button type="button" class="pill" data-go="ui">UI Generator</button>
+        <button type="button" class="pill" data-go="prompts">Prompt Library</button>
+        <button type="button" class="pill" data-go="launch">Music &amp; Hosting</button>
+      </div>
+    </div>
+    <p class="byline">Creator playbook &amp; prompt library by <a href="https://instagram.com/nishkambhatia" target="_blank" rel="noopener">Nishkam Bhatia</a></p>
+  </div>
+</section>
+
+<!-- WORKFLOW -->
+<section class="block" id="workflow">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">How it works</p>
+      <h2>The 5-step master process</h2>
+      <p>You only supply the raw wedding facts. AI handles the design architecture, animations, bilingual script rendering and mobile layout.</p>
+    </div>
+
+    <div class="stages reveal" aria-label="Time per stage">
+      <div class="stage"><div class="n">Stage 01</div><h3>Gather wedding details</h3><p>Names, family text, dates, venues, monogram &amp; MP3</p><span class="t">2 mins</span></div>
+      <div class="stage"><div class="n">Stage 02</div><h3>ChatGPT UI reference</h3><p>Generate a 3-screen mobile mockup or save a reference</p><span class="t">1 min</span></div>
+      <div class="stage"><div class="n">Stage 03</div><h3>Claude / Gemini Canvas</h3><p>Attach details + UI mockup, paste the cultural prompt</p><span class="t">3 mins</span></div>
+      <div class="stage"><div class="n">Stage 04</div><h3>Add music &amp; deploy</h3><p>Link song.mp3, publish free on Netlify / Vercel</p><span class="t">₹0 free</span></div>
+    </div>
+
+    <div class="reveal">
+      <div class="steps-nav" role="tablist" aria-label="Steps">
+        <button type="button" class="step-btn" role="tab" id="st-1" aria-controls="sp-1" aria-selected="true"><span class="num">1</span>Gather inputs</button>
+        <button type="button" class="step-btn" role="tab" id="st-2" aria-controls="sp-2" aria-selected="false" tabindex="-1"><span class="num">2</span>Choose AI builder</button>
+        <button type="button" class="step-btn" role="tab" id="st-3" aria-controls="sp-3" aria-selected="false" tabindex="-1"><span class="num">3</span>UI reference</button>
+        <button type="button" class="step-btn" role="tab" id="st-4" aria-controls="sp-4" aria-selected="false" tabindex="-1"><span class="num">4</span>Paste prompt</button>
+        <button type="button" class="step-btn" role="tab" id="st-5" aria-controls="sp-5" aria-selected="false" tabindex="-1"><span class="num">5</span>Music &amp; launch</button>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="card step-panel" role="tabpanel" id="sp-1" aria-labelledby="st-1">
+        <h3>Gather your 4 simple inputs</h3>
+        <p class="lede">Keep these four items in a single folder on your phone or laptop. Tick each one off as you collect it.</p>
+        <div class="progress"><div class="bar"><span id="chkBar"></span></div><small id="chkCount">0 of 4 ready</small></div>
+        <div id="checklist"></div>
+        <div class="done-note" id="doneNote"><span>All four inputs are ready. Next, pick where to run the prompt.</span><button type="button" class="btn solid sm" data-step="2">Go to step 2</button></div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="card step-panel" role="tabpanel" id="sp-2" aria-labelledby="st-2" hidden>
+        <h3>Choose your AI builder</h3>
+        <p class="lede">The prompts in this guide work across all major coding AIs. Here’s how to pick the best workspace for your workflow.</p>
+        <div class="builders" id="builders"></div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="card step-panel" role="tabpanel" id="sp-3" aria-labelledby="st-3" hidden>
+        <h3>Create a UI reference first</h3>
+        <p class="lede">Download a wedding invitation aesthetic from Pinterest or Dribbble, or generate a custom 3-screen mobile UI board in ChatGPT. A visual reference gets you bespoke typography spacing and arch proportions.</p>
+        <div class="links"><button type="button" class="btn solid" data-go="ui">Open the UI generator</button><a class="btn" href="https://chatgpt.com" target="_blank" rel="noopener">Open ChatGPT</a></div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="card step-panel" role="tabpanel" id="sp-4" aria-labelledby="st-4" hidden>
+        <h3>Paste your master cultural prompt</h3>
+        <p class="lede">In Claude or Gemini Canvas, attach your wedding details and UI mockup, then paste the prompt for your ceremony: Sikh Anand Karaj, Royal Hindu Vivah, Muslim Nikah, South Indian Muhurtham, Christian Matrimony or Destination Fusion. Fill in the bracketed details before you send.</p>
+        <div class="links"><button type="button" class="btn solid" data-go="prompts">Open the prompt library</button></div>
+        <div class="tip"><strong>Pro tip: zero retyping required</strong>Instead of typing out long family lineage lines and R.S.V.P. lists, snap a clear photo of your physical wedding card draft (or upload a Word/PDF file) alongside the prompt. The rule “use the attached card text exactly” instructs the AI to transcribe every name with 100% fidelity.</div>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="card step-panel" role="tabpanel" id="sp-5" aria-labelledby="st-5" hidden>
+        <h3>Add music and go live for ₹0</h3>
+        <p class="lede">Trim your song, drop <span class="inline-code">song.mp3</span> next to your <span class="inline-code">index.html</span>, then publish free on Netlify, Vercel, GitHub Pages or Tiiny.host and share the link on WhatsApp.</p>
+        <div class="links"><button type="button" class="btn solid" data-go="launch">See music &amp; hosting setup</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UI GENERATOR -->
+<section class="block" id="ui">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Visual reference</p>
+      <h2>Create a custom wedding invite UI in ChatGPT first</h2>
+      <p>When you attach a high-resolution UI design screenshot alongside your prompt in Claude or Gemini Canvas, the AI extracts the exact arch curvature, border weights, colour balance and card padding.</p>
+    </div>
+    <div class="ui-grid">
+      <div class="card why-box reveal">
+        <ol class="mini-steps">
+          <li>Open ChatGPT (or Gemini Image Generator) and paste the prompt. Choose a palette for your ceremony below, or keep the brackets and edit them yourself.</li>
+          <li>Download the generated 3-screen mobile UI presentation board image to your phone or computer.</li>
+          <li>Upload that image into Claude or Gemini Canvas alongside your Master Cultural Prompt and add this line:
+            <div class="quote-line"><span id="matchLine">"Match the visual layout, arch geometry, and stationery aesthetic of the attached UI reference image."</span><button type="button" class="btn sm" id="copyMatch">Copy</button></div>
+          </li>
+        </ol>
+      </div>
+      <div class="reveal">
+        <p class="label-sm">Gate palette</p>
+        <div class="palette-pick" id="palPick"></div>
+        <div class="codebox">
+          <div class="code-head"><h4>ChatGPT 3-screen mobile UI prompt</h4><button type="button" class="btn solid sm" id="copyUi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>Copy UI Prompt</button></div>
+          <div class="code-body"><pre class="code open" id="uiCode"></pre></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMPT LIBRARY -->
+<section class="block" id="prompts">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Choose your style</p>
+      <h2>The 6-culture master prompt library</h2>
+      <p>Pick your ceremony, copy the full prompt and paste it into Claude or Gemini Canvas with your card photo and UI reference attached.</p>
+    </div>
+
+    <div class="card custom reveal">
+      <button type="button" class="custom-toggle" id="customToggle" aria-expanded="false" aria-controls="customBody">
+        <span class="ct-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 20h4L19 9l-4-4L4 16v4zM13.5 6.5l4 4"/></svg><span>Quick auto-fill your details <span class="opt">(optional)</span></span></span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="custom-body" id="customBody">
+        <div class="fields">
+          <div class="field"><label for="fGroom">Groom name</label><input id="fGroom" autocomplete="off" placeholder="e.g. Arjun Singh"></div>
+          <div class="field"><label for="fBride">Bride name</label><input id="fBride" autocomplete="off" placeholder="e.g. Simran Kaur"></div>
+          <div class="field"><label for="fCity">Wedding city</label><input id="fCity" autocomplete="off" placeholder="e.g. Amritsar"></div>
+          <div class="field"><label for="fDate">Main ceremony date</label><input id="fDate" type="date"></div>
+        </div>
+        <div class="custom-foot">
+          <span id="fillStatus"><span class="status-dot"></span>Type above and all 6 prompts update live. The date fills the main ceremony line.</span>
+          <button type="button" class="btn sm" id="resetFill">Reset to placeholders</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="ctabs" role="tablist" aria-label="Wedding traditions" id="ctabs"></div>
+    <div id="promptPanel"></div>
+  </div>
+</section>
+
+<!-- MUSIC & HOSTING -->
+<section class="block" id="launch">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Launch day</p>
+      <h2>Add music, then host it free</h2>
+      <p>Your song, your monogram and one link that opens beautifully on every phone.</p>
+    </div>
+
+    <div class="card audio-note reveal">
+      <div class="lcard" style="padding:0"><div class="ico" style="margin:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div></div>
+      <p><strong>Why the music waits for a tap.</strong> iPhone Safari and Android Chrome strictly block websites from playing audio before a user taps the screen. The master prompts solve this natively: tapping “Open Invitation” on the 3D gate swings the doors open and starts your song at 50% volume, pausing automatically if the guest switches tabs or plays your invitation film.</p>
+    </div>
+
+    <div class="launch-grid">
+      <div class="card lcard reveal">
+        <h3>Prepare your audio file</h3>
+        <p>Pick a soft instrumental track (flute, santoor, rabab, veena, violin or an acoustic cover). Trim it to the best 60–90 seconds using <a href="https://mp3cut.net" target="_blank" rel="noopener">mp3cut.net</a> so the file stays under 2 MB for instant loading over WhatsApp.</p>
+      </div>
+      <div class="card lcard reveal">
+        <h3>Local folder setup</h3>
+        <p>Rename the file to <span class="inline-code">song.mp3</span> (and your monogram to <span class="inline-code">monogram.png</span>) and place it in the same folder as your <span class="inline-code">index.html</span> and <span class="inline-code">config.js</span> files. Verify <span class="inline-code">audioSrc: "song.mp3"</span> in config.js.</p>
+      </div>
+      <div class="card lcard reveal">
+        <h3>Testing audio inside AI previews</h3>
+        <p>To hear your music inside Claude or Gemini Canvas before downloading, upload your MP3 to a direct-link host (such as catbox.moe or GitHub Raw) and paste the direct .mp3 URL into the prompt.</p>
+      </div>
+    </div>
+
+    <h3 class="h3-sub reveal">Where to host your wedding invite</h3>
+    <p class="p-sub reveal">All four work for ₹0. Pick by how you like to upload.</p>
+    <div class="hosts" id="hosts"></div>
+
+    <h3 class="h3-sub reveal">3 one-line follow-up prompts for instant tweaks</h3>
+    <p class="p-sub reveal">Paste one of these into the same chat after your invite is built.</p>
+    <div class="tweaks" id="tweaks"></div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <p class="eyebrow">Keep creating</p>
+    <h2>Want more AI workflows and prompt libraries?</h2>
+    <p>Follow Nishkam Bhatia for AI tools, creator tutorials and free resources every week.</p>
+    <div class="links">
+      <a class="btn gold" href="https://instagram.com/nishkambhatia" target="_blank" rel="noopener">Follow @nishkambhatia</a>
+      <a class="btn" href="https://linktr.ee/nishkambhatia" target="_blank" rel="noopener">All free resources</a>
+    </div>
+  </div>
+</section>
+<p class="foot">The AI Wedding Invitation Blueprint by Nishkam Bhatia (Nishtek)</p>
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+document.documentElement.classList.add('js');
+(function(){
+'use strict';
+
+/* ---------- Storage helpers ---------- */
+const store = {
+  get(k, d){ try{ const v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); }catch(e){ return d; } },
+  set(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+};
+
+/* ---------- Theme ---------- */
+const root = document.documentElement;
+root.setAttribute('data-theme', 'light');
+try{ localStorage.removeItem('wb-theme'); }catch(e){}
+
+/* ---------- Toast + copy ---------- */
+const toastEl = document.getElementById('toast');
+let toastT;
+function toast(msg){
+  toastEl.textContent = msg;
+  toastEl.classList.add('show');
+  clearTimeout(toastT);
+  toastT = setTimeout(() => toastEl.classList.remove('show'), 1800);
+}
+function fallbackCopy(text){
+  const ta = document.createElement('textarea');
+  ta.value = text; ta.setAttribute('readonly', '');
+  ta.style.position = 'fixed'; ta.style.top = '-1000px'; ta.style.opacity = '0';
+  document.body.appendChild(ta); ta.select(); ta.setSelectionRange(0, text.length);
+  let ok = false;
+  try{ ok = document.execCommand('copy'); }catch(e){}
+  document.body.removeChild(ta);
+  return ok;
+}
+function copy(text, msg){
+  const done = () => toast(msg || 'Copied! ✓');
+  const fail = () => { if (fallbackCopy(text)) done(); else toast('Press and hold the text to copy'); };
+  if (navigator.clipboard && window.isSecureContext){
+    navigator.clipboard.writeText(text).then(done).catch(fail);
+  } else fail();
+}
+
+/* ---------- Smooth jump ---------- */
+function go(id){
+  const el = document.getElementById(id);
+  if (!el) return;
+  const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  el.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'start'});
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-go]');
+  if (b){ e.preventDefault(); go(b.dataset.go); }
+  const s = e.target.closest('[data-step]');
+  if (s){ selectStep(+s.dataset.step, true); }
+});
+document.getElementById('brandLink').addEventListener('click', e => { e.preventDefault(); window.scrollTo({top:0, behavior:'smooth'}); });
+
+/* ---------- Steps tabs ---------- */
+const stepBtns = [...document.querySelectorAll('.step-btn')];
+function selectStep(n, focus){
+  stepBtns.forEach((b, i) => {
+    const on = i + 1 === n;
+    b.setAttribute('aria-selected', on);
+    b.tabIndex = on ? 0 : -1;
+    const p = document.getElementById('sp-' + (i + 1));
+    p.hidden = !on;
+    if (on){ p.classList.remove('panel-in'); void p.offsetWidth; p.classList.add('panel-in'); if (focus) b.scrollIntoView({block:'nearest', inline:'center', behavior:'smooth'}); }
+  });
+}
+stepBtns.forEach((b, i) => {
+  b.addEventListener('click', () => selectStep(i + 1));
+  b.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft'){
+      const n = (i + (e.key === 'ArrowRight' ? 1 : -1) + stepBtns.length) % stepBtns.length;
+      selectStep(n + 1); stepBtns[n].focus();
+    }
+  });
+});
+
+/* ---------- Step 1 checklist ---------- */
+const inputs = [
+  {t:'Raw wedding details', d:'Couple names, grandparents’ &amp; parents’ blessings, exact family invitation wording, event sequence (dates, start/end times, venue names, full Google Maps addresses), city and R.S.V.P. phone numbers. Already have a printed card draft or WhatsApp message? Attach a photo or PDF of it, no retyping required.'},
+  {t:'A visual UI reference image', d:'Download a wedding invitation aesthetic from Pinterest/Dribbble, or generate a custom 3-screen mobile UI design with the ChatGPT prompt below. A visual reference guarantees bespoke typography spacing and arch proportions.'},
+  {t:'Optional media assets', d:'Couple monogram/crest (<code>monogram.png</code> with transparent background), a 60–90 second instrumental <code>song.mp3</code>, pre-wedding gallery photos, or an optional teaser video (<code>invite.mp4</code>).'},
+  {t:'One master cultural prompt', d:'Choose the copy-paste prompt matching your ceremony tradition: Sikh Anand Karaj, Royal Hindu Vivah, Muslim Nikah, South Indian Muhurtham, Christian Matrimony or Destination Fusion.'}
+];
+const checked = store.get('wb-checks', [false,false,false,false]);
+const listEl = document.getElementById('checklist');
+listEl.innerHTML = inputs.map((it, i) => `
+  <label class="check${checked[i] ? ' done' : ''}">
+    <input type="checkbox" data-i="${i}"${checked[i] ? ' checked' : ''}>
+    <span class="box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+    <span><h4>${i + 1}. ${it.t}</h4><p>${it.d}</p></span>
+  </label>`).join('');
+function updateChecks(){
+  const n = checked.filter(Boolean).length;
+  document.getElementById('chkBar').style.width = (n / 4 * 100) + '%';
+  document.getElementById('chkCount').textContent = n + ' of 4 ready';
+  document.getElementById('doneNote').classList.toggle('show', n === 4);
+}
+listEl.addEventListener('change', e => {
+  const i = +e.target.dataset.i;
+  checked[i] = e.target.checked;
+  e.target.closest('.check').classList.toggle('done', e.target.checked);
+  store.set('wb-checks', checked);
+  updateChecks();
+  if (e.target.checked) toast(inputs[i].t + ' ready ✓');
+});
+updateChecks();
+
+/* ---------- Step 2 builders ---------- */
+const builders = [
+  {n:'Claude with Artifacts', tag:'Recommended, what I use', featured:true,
+   why:'Claude has the strongest front-end visual sensibility for luxury stationery, SVG Mughal/temple arches, 3D CSS door rotations and multi-layer canvas flower physics.',
+   how:'Open claude.ai, attach your UI reference image + wedding card text or screenshot, paste your chosen cultural prompt and hit Enter. Claude opens an interactive live preview right beside your chat.',
+   links:[['Open Claude','https://claude.ai']]},
+  {n:'Google Gemini Canvas', tag:'Great alternative',
+   how:'Open gemini.google.com, click the Canvas button in the prompt bar, attach your wedding details file and UI reference image, and paste the prompt. Once the code finishes generating, click the Preview toggle in the top-right corner of the Canvas workspace to interact with the 3D gate and highlight any section for instant edits.',
+   links:[['Open Gemini','https://gemini.google.com']]},
+  {n:'ChatGPT Canvas',
+   how:'Turn on Canvas, upload your reference image + details, paste the prompt and click Preview.',
+   links:[['Open ChatGPT','https://chatgpt.com']]},
+  {n:'Bolt.new, Lovable.dev & v0.dev', tag:'1-click deploy',
+   how:'Paste the prompt and UI screenshot for a full web workspace with a 1-click Deploy button that publishes your live URL immediately.',
+   links:[['Bolt','https://bolt.new'],['Lovable','https://lovable.dev'],['v0','https://v0.dev']]},
+  {n:'Meta AI', tag:'Completely free',
+   how:'Use it for generating the code or translating family wording. Copy the generated code into a file named index.html on your computer and double-click it to preview in Chrome.',
+   links:[['Open Meta AI','https://meta.ai']]}
+];
+document.getElementById('builders').innerHTML = builders.map(b => `
+  <div class="builder${b.featured ? ' featured' : ''}">
+    <div class="bh"><h4>${b.n}</h4>${b.tag ? `<span class="tag${b.featured ? '' : ' soft'}">${b.tag}</span>` : ''}</div>
+    ${b.why ? `<p class="why">${b.why}</p>` : ''}
+    <p>${b.how}</p>
+    <div class="links">${b.links.map((l, i) => `<a class="btn sm${b.featured && i === 0 ? ' solid' : ''}" href="${l[1]}" target="_blank" rel="noopener">${l[0]}</a>`).join('')}</div>
+  </div>`).join('');
+
+/* ---------- UI generator ---------- */
+const UI_PROMPT = `Create a high-resolution vertical mobile website UI/UX design mockup (9:16 aspect ratio) for a luxury Indian digital wedding invitation website. Show 3 mobile screens side-by-side on a warm cream presentation board:
+
+1. Screen 1 (The Opening Gate): Closed 3D arched double doors in {PAL} with intricate geometric jali lattice work, a glowing round ivory monogram wax seal in the centre, and a softly glowing "Open Invitation" button.
+
+2. Screen 2 (Hero & Blessings Section): Warm ivory handmade paper texture, a fine gold Mughal/temple botanical arch framing the couple's names in high-contrast editorial serif typography, soft watercolor falling rose and jasmine petals, and a formal stationery card with hairline gold borders.
+
+3. Screen 3 (Wedding Functions Timeline & Countdown): A vertical gold thread timeline with luxury pastel cards for each ceremony, minimalist gold icons, "Get Directions" and "Add to Calendar" buttons, and a 4-box live countdown timer. Style: Ultra-luxury bespoke wedding stationery meets modern mobile web UI, generous whitespace, zero clutter.`;
+const pals = [
+  {k:'all', label:'Keep all 3 options', text:'[Sage Green & Muted Gold / Jodhpur Sandstone & Antique Brass / Nawabi Emerald & Champagne Gold]', dots:[]},
+  {k:'sage', label:'Sage Green & Muted Gold', text:'Sage Green & Muted Gold', dots:['#7D8D72','#C5A46D']},
+  {k:'sand', label:'Jodhpur Sandstone & Antique Brass', text:'Jodhpur Sandstone & Antique Brass', dots:['#E8D7BC','#C29B58']},
+  {k:'emerald', label:'Nawabi Emerald & Champagne Gold', text:'Nawabi Emerald & Champagne Gold', dots:['#1E4638','#C8A96E']}
+];
+let palSel = 'all';
+const palEl = document.getElementById('palPick');
+palEl.innerHTML = pals.map(p => `<button type="button" class="chip" data-pal="${p.k}" aria-pressed="${p.k === palSel}">${p.dots.length ? `<span class="dots">${p.dots.map(c => `<i style="background:${c}"></i>`).join('')}</span>` : ''}${p.label}</button>`).join('');
+function uiText(){ return UI_PROMPT.replace('{PAL}', pals.find(p => p.k === palSel).text); }
+function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function hl(s){
+  return esc(s)
+    .replace(/\u0001([\s\S]*?)\u0002/g, '<mark>$1</mark>')
+    .replace(/\[[^\]\n]*\]/g, m => `<span class="ph">${m}</span>`);
+}
+function renderUi(){ document.getElementById('uiCode').innerHTML = hl(uiText()); }
+palEl.addEventListener('click', e => {
+  const b = e.target.closest('[data-pal]'); if (!b) return;
+  palSel = b.dataset.pal;
+  palEl.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', c.dataset.pal === palSel));
+  renderUi();
+});
+renderUi();
+document.getElementById('copyUi').addEventListener('click', () => copy(uiText()));
+document.getElementById('copyMatch').addEventListener('click', () => copy('Match the visual layout, arch geometry, and stationery aesthetic of the attached UI reference image.'));
+
+/* ---------- Cultures & prompts ---------- */
+const SECTIONS = ['Hero','Blessings','Invitation','Countdown','Functions','Gallery','Closing'];
+const cultures = [
+{
+ key:'sikh', emoji:'🪯', tab:'Sikh (Anand Karaj)', num:'Prompt 01', title:'Sikh Wedding (Anand Karaj)', theme:'Pastel Sage & Gold',
+ palette:[['Warm Ivory','#F8F4EB'],['Pastel Sage','#DCE5D5'],['Deep Sage','#7D8D72'],['Muted Gold','#C5A46D'],['Soft Blush','#F1D9D7'],['Charcoal Sage','#353A33']],
+ fonts:['Cormorant Garamond','Jost','Noto Serif Gurmukhi','Mukta Mahee'],
+ flowers:['Roses + jasmine','Marigold','Jasmine + rose','Lotus petals','Leaves + marigold','Bougainvillea','Rose + gold glitter'],
+ facts:[['Symbol','Ik Onkar (ੴ) + Mughal arch'],['Toggle','English / ਪੰਜਾਬੀ + #bride']],
+ note:['Pro tip: zero retyping required','Instead of typing out long family lineage lines and R.S.V.P. lists, simply snap a clear photo of your physical wedding card draft (or upload a Word/PDF file) alongside this prompt. The rule “use the attached card text exactly” instructs the AI to transcribe every name with 100% fidelity.'],
+ prompt:`Build a premium, mobile-first digital wedding invitation website for a Sikh wedding (Anand Karaj). It should feel like luxury wedding stationery: elegant, pastel and spiritual but not heavy. Give only a light touch of Sikh tradition (Ik Onkar ੴ, a respectful Anand Karaj card). No bhajan or religious audio.
+
+WEDDING DETAILS (USE EXACTLY AS GIVEN; NEVER INVENT DETAILS OR FILL GAPS)
+- Couple: {GROOM} & {BRIDE}
+- Family wording: use the attached card text exactly (hosts, late grandparents' blessings, lineage lines, "eagerly awaiting", "best compliments", R.S.V.P. contacts)
+- Functions (in time order):
+1. [Function] – [Day, date] – [time] – [Venue, address]
+2. Anand Karaj (Lavan Phere) – {DATE} – [start–end time] – [Gurdwara name, address] – "Followed by lunch at [venue]"
+3. [Reception] – [date] – [time] – [venue, address]
+- City: {CITY} Timezone: Asia/Kolkata
+- Assets attached: monogram image, background song (mp3), optional invitation video
+
+DESIGN
+- Pastel palette: Warm Ivory #F8F4EB (base), Sage #DCE5D5 (bands/cards), Deep Sage #7D8D72, Muted Gold #C5A46D (hairlines/ornaments only), Soft Blush #F1D9D7, Text #353A33
+- Fonts (Google Fonts): Cormorant Garamond for names/headings, Jost for body text, Noto Serif Gurmukhi + Mukta Mahee for Punjabi
+- Ornaments: a fine gold Mughal-style arch, botanical vines, gold diamond dividers, faint gold mandalas. Generous whitespace. No heavy shadows, no saturated reds.
+
+OPENING: GATE ANIMATION
+- Full-screen closed double doors: sage panels with a gold jali (lattice) pattern, arched inner panels and gold ring handles. In the centre: Ik Onkar, the monogram in a round ivory seal, the couple's names, the date and a softly glowing "Open Invitation" button.
+- On tap: the seal fades, both doors swing open in 3D (rotateY), warm light glows through, and a shower of rose petals falls. The background song starts at 50% volume on that same tap (never autoplay before it), loops, and has a play/pause button in the top bar. It pauses when the tab is hidden or the video plays, and resumes afterwards.
+
+PAGE SECTIONS (SINGLE SCROLLING PAGE)
+1. Hero: monogram inside the gold arch; the arch line draws itself in, the names rise letter by letter (word by word in Punjabi so vowel signs don't break), then the date and city appear
+2. Blessings: Ik Onkar + "By the grace of Waheguru Ji…" + a short blessing message
+3. Formal invitation: a stationery-style card with gold border and inner rule, using the family wording exactly
+4. Live countdown to the Anand Karaj (days/hours/minutes/seconds); shows a "happening now" message during the ceremony and a thank-you message after it
+5. Wedding Functions: vertical timeline with a gold thread that fills as you scroll; one card per function with date, time, venue, address, "Get Directions" (Google Maps) and "Add to Calendar" (Google Calendar + .ics). The Anand Karaj card also shows a short Gurdwara etiquette note (cover head, remove shoes) and a "Watch the invitation film" button
+6. Gallery: masonry grid, lightbox with swipe/arrow keys, labelled placeholder frames for photos to come
+7. Closing: thank-you message, names, date, Share (native share → WhatsApp fallback), WhatsApp, Copy link, Save as PDF (print layout), R.S.V.P. contacts, Back to top
+(No RSVP form, no Our Story, no separate venues section, no gift registry, no tracking.)
+
+MOTION
+- A different flower falls in each section on one canvas: Hero = roses + jasmine, Blessings = marigold, Invitation = jasmine + rose, Countdown = lotus petals, Functions = leaves + marigold, Gallery = bougainvillea, Closing = rose + gold glitter
+- Three depth layers for parallax: far = small, soft, slow; near = large, faster. Scrolling moves near petals more than far ones, petals flutter (3D flip) and scrolling fast adds a wind drift. Pause the animation when the tab is hidden.
+- Faint gold mandalas behind sections rotate slowly with scroll; side vines drift at different speeds
+- Scroll reveals: fade + rise + slight blur, staggered countdown boxes, function cards slide in, dividers open from the centre, names on the card animate letter by letter
+- Respect prefers-reduced-motion (doors open instantly, no petals or parallax)
+
+LANGUAGE
+- English / ਪੰਜਾਬੀ toggle (also shown on the gate). Translate every heading, button, label and date into Gurmukhi. Never mix scripts or leave broken characters.
+- Support a second family-side version of the same site at URL#bride (bride side wording and name order)
+
+TECH
+- Plain HTML/CSS/JS, no frameworks. Keep all wedding data in one config.js and all interface text in i18n.js.
+- Meta tags + Open Graph image for the WhatsApp link preview; semantic, accessible, keyboard friendly, lazy-loaded images
+- Ready to host as static files on GitHub Pages; give me a zip of the files to upload
+- Test on phone and desktop before handing over`
+},
+{
+ key:'hindu', emoji:'🪔', tab:'Hindu / Royal Rajasthani', num:'Prompt 02', title:'Royal North Indian / Rajasthani Hindu Wedding (Vedic Vivah)', theme:'Sandstone & Terracotta',
+ palette:[['Sandstone','#FAF5EE'],['Champagne','#F1E6D6'],['Terracotta Rose','#B85D4B'],['Antique Brass','#C29B58'],['Marigold Tint','#F7E8D0'],['Deep Espresso','#2E241F']],
+ fonts:['Cormorant Garamond','Jost','Noto Serif Devanagari','Hind'],
+ flowers:['Red roses + mogra','Genda marigold','Lotus + rose','Pink lotus','Ashoka leaves + marigold','Bougainvillea','Rose + antique gold glitter'],
+ facts:[['Motif','ॐ श्री गणेशाय नमः + Jharokha'],['Toggle','English / हिंदी + #bride']],
+ note:['Customization note for Hindu weddings','If your ceremony includes specific sub-timings (such as Sehra Bandi, Ghurchari, Baraat Prasthan, Jaimala, and Taron Ki Chhaon Mein Vidai), list them inside Function #3 so the AI renders them as a neat sub-schedule inside the main wedding card.'],
+ prompt:`Build a premium, mobile-first digital wedding invitation website for a traditional North Indian / Rajasthani Hindu wedding (Shubh Vivah). It should feel like bespoke royal Udaipur palace wedding stationery: warm, regal, heritage-inspired yet airy and modern. Give a graceful touch of Vedic tradition (ॐ श्री गणेशाय नमः, fine Jharokha arches, lotus motifs). No loud autoplay dhol or religious chants.
+
+WEDDING DETAILS (USE EXACTLY AS GIVEN; NEVER INVENT DETAILS OR FILL GAPS)
+- Couple: {GROOM} & {BRIDE} | City: {CITY} | Timezone: Asia/Kolkata
+- Family wording: use the attached card text exactly (hosts, late grandparents' blessings, lineage lines, "awaiting your gracious presence", "best compliments", R.S.V.P. contacts)
+- Functions (in time order): 1. [Haldi / Mehendi] – [Day, date, time, Venue, address] | 2. [Sangeet / Ring Ceremony] – [Day, date, time, Venue, address] | 3. [Baraat Swagat & Pheras (Shubh Muhurat)] – {DATE_}start–end time, Venue, address] – "Followed by Dinner & Ashirwad" | 4. [Reception] – [date, time, venue, address]
+- Assets attached: monogram image, background instrumental song (mp3), optional invitation video
+
+DESIGN & OPENING GATE ANIMATION
+- Palette: Jodhpur Sandstone Ivory #FAF5EE (base), Warm Champagne #F1E6D6 (bands/cards), Terracotta Rose #B85D4B, Antique Brass Gold #C29B58 (hairlines/ornaments only), Soft Marigold #F7E8D0, Espresso Text #2E241F.
+- Fonts: Cormorant Garamond for headings, Jost for body, Noto Serif Devanagari + Hind for Hindi.
+- Ornaments: fine gold Rajasthani Jharokha arch, hanging temple bells (ghanti) & lotus line art, gold diamond dividers, faint Suryamandala geometry. Generous whitespace.
+- Gate Animation: Full-screen closed double doors in carved sandstone/rosewood panels with brass jali lattice, cusped Jharokha inner arches and peacock ring handles. Centre shows Lord Ganesha line icon + "ॐ श्री गणेशाय नमः", monogram in a round ivory wax seal, couple's names, date and glowing "Open Invitation" button. On tap: seal fades, doors swing open in 3D (rotateY), warm golden light glows through, and marigold + red rose petals fall. Background song starts at 50% volume on that tap, loops, with a top-bar play/pause toggle, and pauses when tab is hidden or video plays.
+
+PAGE SECTIONS, MOTION, LANGUAGE & TECH
+- 7 Single-Page Sections: 1. Hero (monogram inside gold Jharokha arch that draws itself in; names rise letter by letter in English and word by word in Hindi Devanagari so matras never break; date & city) | 2. Blessings (Ganesha icon + "वक्रतुण्ड महाकाय…" shloka + family blessing) | 3. Formal Invitation (stationery card with double gold border & lotus corners using exact family wording) | 4. Live Countdown to Shubh Muhurat Pheras | 5. Wedding Functions (vertical gold thread timeline filling on scroll; cards with date, time, venue, dress code, Google Maps "Get Directions", Google Calendar + .ics, Pheras Muhurat note & "Watch the invitation film" button) | 6. Gallery (masonry grid, swipe lightbox, Jharokha placeholder frames) | 7. Closing (thank-you note, native Share → WhatsApp fallback, Copy link, Save as PDF, R.S.V.P. contacts, Back to top).
+- Motion: 3-layer parallax canvas with distinct flowers per section (Hero = red roses + mogra, Blessings = yellow/orange genda marigold, Invitation = lotus + rose, Countdown = pink lotus, Functions = ashoka leaves + marigold, Gallery = bougainvillea, Closing = rose + antique gold glitter); wind drift on fast scroll; rotating faint mandalas; respects prefers-reduced-motion.
+- Language & Tech: English / हिंदी toggle on gate & top bar; URL#bride switches to bride-side host wording and name order. Plain HTML/CSS/JS with all wedding data in config.js and translations in i18n.js, WhatsApp Open Graph tags, ready as a static zip for GitHub Pages / Netlify.`
+},
+{
+ key:'muslim', emoji:'🌙', tab:'Muslim (Nikah & Walima)', num:'Prompt 03', title:'Muslim Wedding (Nikah & Walima)', theme:'Nawabi Emerald & Pearl, Mughal heritage',
+ palette:[['Pearl Ivory','#F9F6F0'],['Mint Sage','#E4ECE6'],['Royal Emerald','#1E4638'],['Champagne Gold','#C8A96E'],['Blush Pearl','#F3E3DF'],['Cypress Ink','#252E2A']],
+ fonts:['Cormorant Garamond','Jost','Amiri','Noto Nastaliq Urdu'],
+ flowers:['Motia jasmine + damask roses','Mogra buds','Jasmine + pink rose','White lotus & rose','Olive leaves + white roses','Blush bougainvillea','Damask rose + champagne gold dust'],
+ facts:[['Calligraphy','Bismillah (﷽) + Shamsa'],['Toggle','English / اردو (RTL) + #bride']],
+ note:['Dual-side hosting advantage (#bride URL)','In Muslim weddings where the Bride’s family hosts the Nikah and the Groom’s family hosts the Dawat-e-Walima, sharing yourlink.com sends the Groom’s Walima-led invite while yourlink.com#bride automatically displays the Bride’s Nikah-led invite from the exact same codebase.'],
+ prompt:`Build a premium, mobile-first digital wedding invitation website for a Muslim wedding (Nikah & Dawat-e-Walima). It should feel like luxury Nawabi / Mughal heirloom stationery: serene, poetic, regal and refined. Give a respectful touch of Islamic heritage (Bismillah calligraphy ﷽, delicate 8-point geometric star-and-arabesque lattice, pointed Mughal archways). Never autoplay audio before user interaction.
+
+WEDDING DETAILS (USE EXACTLY AS GIVEN; NEVER INVENT DETAILS OR FILL GAPS)
+- Couple: {GROOM} & {BRIDE} | City: {CITY} | Timezone: Asia/Kolkata
+- Family wording: use the attached card text exactly (hosts, late grandparents' du'as/blessings, lineage lines, "request the honour of your presence and du'as", "best compliments from", R.S.V.P. contacts)
+- Functions (in time order): 1. [Rasm-e-Hina / Mehendi] – [Day, date, time, Venue, address] | 2. Nikah Ceremony – {DATE_}start–end time, Masjid / Venue name, address] – "Followed by Dawat-e-Nikah at [venue]" | 3. Dawat-e-Walima – [date, time, venue, address]
+- Assets attached: monogram image, background instrumental audio (mp3), optional invitation video
+
+DESIGN & OPENING GATE ANIMATION
+- Palette: Pearl Ivory #F9F6F0 (base), Soft Mint-Sage #E4ECE6 (bands/cards), Deep Royal Emerald #1E4638 (gate/accents), Champagne Gold #C8A96E (hairlines/arabesque ornaments only), Blush Pearl #F3E3DF, Cypress Ink #252E2A.
+- Fonts: Cormorant Garamond for headings, Jost for body text, Amiri + Noto Nastaliq Urdu for Arabic/Urdu calligraphy.
+- Ornaments: pointed gold Mughal arch, 8-point geometric Shamsa rosettes, jasmine vines, gold diamond dividers. Generous whitespace.
+- Gate Animation: Full-screen closed double doors in deep emerald panels with fine gold Mashrabiya geometric jali lattice, pointed arched inner panels and brass crescent-ring handles. Centre shows Bismillah (﷽) in gold calligraphy, monogram in a round pearl ivory seal, couple's names, date and glowing "Open Invitation" button. On tap: seal fades, doors swing open in 3D (rotateY), warm pearl light glows through, and white motia (jasmine) + damask rose petals fall. Background instrumental starts at 50% volume on that tap, loops, with a top-bar play/pause button, and pauses when tab is hidden or video plays.
+
+PAGE SECTIONS, MOTION, LANGUAGE & TECH
+- 7 Single-Page Sections: 1. Hero (monogram inside pointed gold Mughal arch that draws itself in; names rise letter by letter in English and word by word in Urdu so ligatures never break; date & city) | 2. Blessings (Bismillah + "In the name of Allah, the Most Beneficent, the Most Merciful" + Quranic marriage du'a Surah An-Naba 78:8 "And We created you in pairs") | 3. Formal Invitation (stationery card with gold arabesque corners using exact family wording) | 4. Live Countdown to the Nikah | 5. Wedding Functions (vertical gold thread timeline filling on scroll; cards with date, time, venue, Google Maps "Get Directions", Google Calendar + .ics, polite Masjid/Khutbah-e-Nikah punctuality & modest attire note, and "Watch the invitation film" button) | 6. Gallery (masonry grid, swipe lightbox, Mughal-arched frames) | 7. Closing ("JazakAllah Khair for sharing in our joy", native Share → WhatsApp fallback, Copy link, Save as PDF, R.S.V.P. contacts, Back to top).
+- Motion: 3-layer parallax canvas with distinct flowers per section (Hero = white motia jasmine + blush damask roses, Blessings = mogra buds, Invitation = jasmine + pink rose, Countdown = white lotus & rose, Functions = olive leaves + white roses, Gallery = blush bougainvillea, Closing = damask rose + champagne gold dust); rotating faint 8-point Shamsa mandalas; respects prefers-reduced-motion.
+- Language & Tech: English / اردو toggle on gate & top bar (switches cleanly to dir="rtl" with Nastaliq typography); URL#bride switches between Bride-side (Nikah host) and Groom-side (Walima host) wording. Plain HTML/CSS/JS with config.js and i18n.js, WhatsApp Open Graph tags, ready as a static zip for GitHub Pages / Netlify.`
+},
+{
+ key:'south', emoji:'🌴', tab:'South Indian (Muhurtham)', num:'Prompt 04', title:'South Indian Temple / Muhurtham Wedding (Kalyanam)', theme:'Kanjeevaram Ivory & Gold',
+ palette:[['Kasavu Ivory','#FAF6EC'],['Chandan Silk','#EFE5D2'],['Mango Leaf','#3F5E45'],['Temple Gold','#C49A45'],['Kumkum Coral','#E8C5B8'],['Filter Coffee','#2C241D']],
+ fonts:['Cormorant Garamond','Jost','Noto Serif Tamil / Telugu / Kannada / Malayalam'],
+ flowers:['Madurai Malli + pink lotus','Marigold + tulsi/mango leaves','Jasmine strands + rose','Pink lotus petals','Kanakambaram + jasmine','Bougainvillea','Jasmine + temple gold shimmer'],
+ facts:[['Motifs','Kolam + Gopuram + Toran'],['Toggle','English / regional script + #bride']],
+ note:['Regional script precision','Simply specify your language in the prompt (e.g., “Use English / தமிழ் toggle with Noto Serif Tamil” or “English / తెలుగు with Noto Serif Telugu”) and include your Panchangam details (Subha Muhurtham, Thithi, Nakshatram, Lagnam) in Function #2.'],
+ prompt:`Build a premium, mobile-first digital wedding invitation website for a traditional South Indian Muhurtham wedding (Tamil / Telugu / Kannada / Malayalam). It should feel like heirloom Kanjeevaram silk & Kasavu cotton stationery: serene, auspicious, architectural and culturally rooted without clutter. Include subtle South Indian heritage touches (temple pillar archways, delicate Kolam/Muggu geometry, mango-leaf toran, Nilavilakku lamp). Never autoplay audio before tap.
+
+WEDDING DETAILS (USE EXACTLY AS GIVEN; NEVER INVENT DETAILS OR FILL GAPS)
+- Couple: {GROOM} & {BRIDE} | City: {CITY} | Timezone: Asia/Kolkata
+- Family wording: use the attached card text exactly (hosts, grandparents' blessings, Gothram/lineage lines if given, "soliciting your gracious presence with family", "best compliments", R.S.V.P. contacts)
+- Functions (in time order): 1. [Nischayathartham / Pellikuthuru / Vratham] – [Day, date, time, Venue, address] | 2. Subha Muhurtham (Kalyanam) – {DATE_}Muhurtham window start–end time, Mandapam / Venue, address] – "Followed by traditional Kalyana Virundhu / Sadhya" | 3. [Reception] – [date, time, venue, address]
+- Assets attached: monogram image, background instrumental song (Veena/Flute/Nadaswaram mp3), optional invitation video
+
+DESIGN & OPENING GATE ANIMATION
+- Palette: Kasavu Ivory #FAF6EC (base), Soft Sandalwood/Chandan #EFE5D2 (bands/cards), Mango Leaf Green #3F5E45 (accents), Antique Temple Gold #C49A45 (zari borders/hairlines), Soft Kumkum Coral #E8C5B8, Deep Coffee Text #2C241D.
+- Fonts: Cormorant Garamond for headings, Jost for body text, plus Noto Serif [Tamil / Telugu / Kannada / Malayalam — pick yours] for regional script.
+- Ornaments: fine gold temple-pillar arch with a mango-leaf (thoranam) header, delicate Kolam geometric dividers, Kuthuvilakku lamp icon, faint lotus mandalas. Generous whitespace.
+- Gate Animation: Full-screen closed double doors in carved Chettinad teakwood / sandalwood panels with brass studs, carved lotus medallions and brass ring handles under a mango-leaf & jasmine toran. Centre shows auspicious symbol (Pillaiyar Suzhi உ / శ్రీ / ॐ), monogram in a round ivory seal, couple's names, date and glowing "Open Invitation" button. On tap: seal fades, doors swing open in 3D (rotateY), warm golden lamp light glows through, and Madurai Malli (jasmine buds) + pink lotus petals fall. Background instrumental starts at 50% volume on that tap, loops, with a top-bar play/pause toggle.
+
+PAGE SECTIONS, MOTION, LANGUAGE & TECH
+- 7 Single-Page Sections: 1. Hero (monogram inside gold temple-pillar arch that draws itself in; names rise letter by letter in English and word by word in regional script so vowel signs never break; date & city) | 2. Blessings (Auspicious header + sacred Kuthuvilakku lamp line art + family blessing) | 3. Formal Invitation (stationery card with subtle Kanjeevaram zari temple border triangles using exact family wording) | 4. Live Countdown to Subha Muhurtham | 5. Wedding Functions (vertical gold zari thread timeline filling on scroll; cards with date, time, Lagnam/Muhurtham window, venue, Google Maps "Get Directions", Google Calendar + .ics, Sadhya/feast note & "Watch the invitation film" button) | 6. Gallery (masonry grid, swipe lightbox, temple-arched frames) | 7. Closing (thank-you note, native Share → WhatsApp fallback, Copy link, Save as PDF, R.S.V.P. contacts, Back to top).
+- Motion: 3-layer parallax canvas with distinct flowers per section (Hero = Madurai Malli white jasmine buds + pink lotus, Blessings = yellow marigold + tulsi/mango leaves, Invitation = jasmine strands + rose, Countdown = pink lotus petals, Functions = kanakambaram + jasmine, Gallery = bougainvillea, Closing = jasmine + temple gold shimmer); rotating faint Kolam geometric mandalas; respects prefers-reduced-motion.
+- Language & Tech: English / [தமிழ் / తెలుగు / ಕನ್ನಡ / മലയാളം] toggle on gate & top bar; URL#bride switches to bride-side wording and name order. Plain HTML/CSS/JS with config.js and i18n.js, WhatsApp Open Graph tags, ready as a static zip for GitHub Pages / Netlify.`
+},
+{
+ key:'christian', emoji:'🕊️', tab:'Christian (Holy Matrimony)', num:'Prompt 05', title:'Christian Wedding (Holy Matrimony & Reception)', theme:'Alabaster & Olive',
+ palette:[['Alabaster','#FAF8F5'],['Soft Linen','#EFECE6'],['Dusty Olive','#6E7B68'],['Champagne Gold','#C4A777'],['Blush Peony','#F4E4E1'],['Charcoal Ink','#2F3330']],
+ fonts:['Cormorant Garamond Italic','Jost','Plus Jakarta Sans'],
+ flowers:['White garden roses + baby’s breath','Olive leaves + white petals','Blush peony petals','White lily petals','Eucalyptus + olive leaves','Blush & white roses','White rose petals + champagne gold dust'],
+ facts:[['Motifs','Fine cross + cathedral arch'],['Toggle','Bilingual support + #bride']],
+ note:['Music & hymn tip','For Christian wedding invites, an acoustic piano or string quartet arrangement of Canon in D, A Thousand Years, or a favorite church hymn trimmed to 75 seconds creates an unforgettable opening gate moment.'],
+ prompt:`Build a premium, mobile-first digital wedding invitation website for a Christian wedding (Holy Matrimony & Reception). It should feel like European fine-art cotton letterpress stationery: timeless, romantic, botanical and serene. Give a graceful touch of Christian tradition (a fine-line gold cross motif, a Scripture verse on love, and a respectful Church Nuptial Mass / Holy Matrimony card). Never autoplay audio before user tap.
+
+WEDDING DETAILS (USE EXACTLY AS GIVEN; NEVER INVENT DETAILS OR FILL GAPS)
+- Couple: {GROOM} & {BRIDE} | City: {CITY} | Timezone: Asia/Kolkata
+- Family wording: use the attached card text exactly (parents' names, blessings, "cordially invite you to share in their joy as they unite in Holy Matrimony", "best compliments", R.S.V.P. contacts)
+- Functions (in time order): 1. [Roce Ceremony / Bridal Shower / Rehearsal Dinner] – [Day, date, time, Venue, address] | 2. Holy Matrimony (Nuptial Service) – {DATE_}start–end time, Church / Cathedral name, address] – "Officiated by [Celebrant name, if given]" | 3. Wedding Reception & Toast – [date, time, venue, address]
+- Assets attached: monogram image, background instrumental song (piano/strings mp3), optional invitation video
+
+DESIGN & OPENING GATE ANIMATION
+- Palette: Alabaster Cream #FAF8F5 (base), Soft Linen #EFECE6 (bands/cards), Dusty Olive #6E7B68 (accents), Champagne Gold #C4A777 (hairlines/ornaments only), Blush Peony #F4E4E1, Charcoal Ink #2F3330.
+- Fonts: Cormorant Garamond (regular + italic) for names/headings/scripture, Jost for body text.
+- Ornaments: fine gold Gothic/Cathedral botanical arch, hand-drawn olive branches & eucalyptus sprigs, minimalist gold cross icon, debossed wax seal. Generous whitespace and zero heavy shadows.
+- Gate Animation: Full-screen closed double gates featuring arched cathedral wrought-iron & frosted linen panels framed by olive and white garden rose vines. Centre shows a fine gold cross above a round ivory wax seal with the couple's monogram, names, date and softly glowing "Open Invitation" button. On tap: seal fades, gates swing open in 3D (rotateY), warm sunlit church light glows through, and white garden rose petals + olive leaves fall. Background instrumental starts at 50% volume on that tap, loops, with a top-bar play/pause toggle, and pauses when tab is hidden or video plays.
+
+PAGE SECTIONS, MOTION, LANGUAGE & TECH
+- 7 Single-Page Sections: 1. Hero (monogram inside gold cathedral arch that draws itself in; names rise letter by letter; date & city) | 2. Blessings / Scripture (Fine gold cross + Scripture verse "Love is patient, love is kind… Therefore what God has joined together, let no one separate" — 1 Corinthians 13:4 / Mark 10:9 + family blessing) | 3. Formal Invitation (letterpress-style card with gold inner rule using exact family wording) | 4. Live Countdown to Holy Matrimony | 5. Wedding Functions (vertical gold thread timeline filling on scroll; cards with date, time, venue, Google Maps "Get Directions", Google Calendar + .ics, polite Church sanctuary etiquette note to be seated 15 mins prior to bridal procession, and "Watch the invitation film" button) | 6. Gallery (masonry grid, swipe lightbox, editorial frames) | 7. Closing (thank-you note, native Share → WhatsApp fallback, Copy link, Save as PDF, R.S.V.P. contacts, Back to top).
+- Motion: 3-layer parallax canvas with distinct botanicals per section (Hero = white garden roses + baby's breath, Blessings = olive leaves + white petals, Invitation = blush peony petals, Countdown = white lily petals, Functions = eucalyptus + olive leaves, Gallery = blush & white roses, Closing = white rose petals + champagne gold dust); rotating faint botanical wreaths; respects prefers-reduced-motion.
+- Language & Tech: English / [Optional Malayalam / Konkani / Tamil / Hindi] toggle on gate & top bar; URL#bride switches to bride-side wording and name order. Plain HTML/CSS/JS with config.js and i18n.js, WhatsApp Open Graph tags, ready as a static zip for GitHub Pages / Netlify.`
+},
+{
+ key:'destination', emoji:'🌺', tab:'Destination / Fusion', num:'Prompt 06', title:'Modern Destination & Multicultural Fusion Wedding', theme:'Sunset Terracotta & Sand',
+ palette:[['Sunlit Linen','#F9F5EE'],['Warm Sand','#EDE4D5'],['Terracotta','#C66D53'],['Brushed Gold','#C5A46D'],['Olive Grove','#6D7961'],['Espresso','#2B2623']],
+ fonts:['Cormorant Garamond','Jost'],
+ flowers:['Bougainvillea + jasmine','Olive leaves','White orchids + rose','Lotus petals','Citrus leaves + marigold','Pink & terracotta bougainvillea','White rose + gold sparkles'],
+ sectionNames:['Hero','Welcome','Invitation','Countdown','Itinerary','Gallery','Closing'],
+ facts:[['Vibe','Editorial villa / beach / palace'],['Features','Dress code badges + travel'],['Toggle','Multi-script + #bride']],
+ note:['Dress code badges','Add a dress code to each function line (for example “Sunset pastels” or “Black tie”) and every itinerary card gets its own mood badge, so guests know what to pack.'],
+ prompt:`Build a premium, mobile-first digital wedding invitation website for a modern destination or multicultural fusion wedding. It should feel like a Vogue Weddings editorial feature meets luxury Goa/Udaipur/Mediterranean villa stationery: sun-drenched, architectural, effortless and ultra-refined. Never autoplay audio before user tap.
+
+WEDDING DETAILS (USE EXACTLY AS GIVEN; NEVER INVENT DETAILS OR FILL GAPS)
+- Couple: {P1} & {P2} | Destination City: {CITY} | Timezone: [Asia/Kolkata]
+- Family wording: use the attached card text exactly (hosts, parents' blessings, destination welcome note, R.S.V.P. contacts)
+- Functions (in time order): 1. [Welcome Sundowner / Poolside Mehendi] – [Day, date, time, Venue, address, Dress Code] | 2. [The Wedding Ceremony] – {DATE_}start–end time, Venue, address, Dress Code] | 3. [Under the Stars Reception / Afterparty] – [date, time, venue, address, Dress Code]
+- Assets attached: monogram image, background song (mp3), optional invitation video
+
+DESIGN & OPENING GATE ANIMATION
+- Palette: Sunlit Linen #F9F5EE (base), Warm Sand #EDE4D5 (bands/cards), Sunset Terracotta #C66D53 (accents), Brushed Gold #C5A46D (hairlines/ornaments), Olive Grove #6D7961, Espresso Text #2B2623. Fonts: Cormorant Garamond for headings, Jost for body.
+- Gate Animation: Full-screen closed double doors featuring arched resort villa louver & brass lattice panels framed by cascading terracotta bougainvillea. Centre shows custom monogram inside a sculpted wax seal, couple's names, destination city & date, and softly glowing "Open Invitation" button. On tap: seal fades, doors swing open in 3D (rotateY), golden-hour sunlight glows through, and bougainvillea + white orchid petals fall. Background song starts at 50% volume on that tap, loops, with a top-bar play/pause toggle.
+
+PAGE SECTIONS, MOTION, LANGUAGE & TECH
+- 7 Single-Page Sections: 1. Hero (monogram inside architectural gold arch that draws itself in; names rise letter by letter; date & destination city) | 2. Destination Welcome & Blessings (warm welcome note from both families) | 3. Formal Invitation (editorial cotton-card layout with fine gold border using exact family wording) | 4. Live Countdown to the Wedding Ceremony | 5. Itinerary & Functions (vertical gold thread timeline filling on scroll; cards with date, time, venue, Dress Code mood badge, Google Maps "Get Directions", Google Calendar + .ics, and "Watch the invitation film" button) | 6. Gallery (masonry grid, swipe lightbox) | 7. Closing (thank-you note, weather/resort check-in note if provided, native Share → WhatsApp fallback, Copy link, Save as PDF, R.S.V.P. contacts, Back to top).
+- Motion: 3-layer parallax canvas with distinct botanicals per section (Hero = bougainvillea + jasmine, Welcome = olive leaves, Invitation = white orchids + rose, Countdown = lotus petals, Functions = citrus leaves + marigold, Gallery = pink & terracotta bougainvillea, Closing = white rose + gold sparkles); respects prefers-reduced-motion.
+- Language & Tech: English / [Second Language] toggle; URL#bride switches host order. Plain HTML/CSS/JS with config.js and i18n.js, WhatsApp Open Graph tags, ready as a static zip for GitHub Pages / Netlify.`
+}
+];
+
+/* ---------- Auto-fill state ---------- */
+const fillState = store.get('wb-fill', {groom:'', bride:'', city:'', date:''});
+const fGroom = document.getElementById('fGroom'), fBride = document.getElementById('fBride'),
+      fCity = document.getElementById('fCity'), fDate = document.getElementById('fDate');
+fGroom.value = fillState.groom; fBride.value = fillState.bride; fCity.value = fillState.city; fDate.value = fillState.date;
+
+function fmtDate(iso){
+  if (!iso) return '';
+  const [y, m, d] = iso.split('-').map(Number);
+  if (!y || !m || !d) return '';
+  const dt = new Date(y, m - 1, d);
+  try{ return dt.toLocaleDateString('en-IN', {weekday:'long', day:'numeric', month:'long', year:'numeric'}); }
+  catch(e){ return dt.toDateString(); }
+}
+function fill(tpl, display){
+  const v = s => (s || '').trim();
+  const mark = (val, ph) => val ? (display ? '\u0001' + val + '\u0002' : val) : ph;
+  const g = v(fillState.groom), b = v(fillState.bride), c = v(fillState.city), d = fmtDate(fillState.date);
+  return tpl
+    .split('{GROOM}').join(mark(g, '[Groom name]'))
+    .split('{BRIDE}').join(mark(b, '[Bride name]'))
+    .split('{P1}').join(mark(g, '[Partner 1 name]'))
+    .split('{P2}').join(mark(b, '[Partner 2 name]'))
+    .split('{CITY}').join(mark(c, '[City]'))
+    .split('{DATE_}').join(d ? mark(d, '') + ', [' : '[date, ')
+    .split('{DATE}').join(mark(d, '[date]'));
+}
+function anyFilled(){ return !!(fillState.groom.trim() || fillState.bride.trim() || fillState.city.trim() || fillState.date); }
+
+/* ---------- Culture tabs ---------- */
+let current = cultures[0].key;
+const tabsEl = document.getElementById('ctabs');
+tabsEl.innerHTML = cultures.map((c, i) => `<button type="button" class="ctab" role="tab" id="ct-${c.key}" aria-controls="promptPanel" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}" data-c="${c.key}"><span class="e" aria-hidden="true">${c.emoji}</span>${i + 1}. ${c.tab}</button>`).join('');
+const ctabBtns = [...tabsEl.querySelectorAll('.ctab')];
+function selectCulture(key, focus){
+  current = key;
+  ctabBtns.forEach(b => { const on = b.dataset.c === key; b.setAttribute('aria-selected', on); b.tabIndex = on ? 0 : -1; if (on && focus !== false) b.scrollIntoView({block:'nearest', inline:'center', behavior:'smooth'}); });
+  renderPrompt(true);
+}
+tabsEl.addEventListener('click', e => { const b = e.target.closest('.ctab'); if (b) selectCulture(b.dataset.c); });
+tabsEl.addEventListener('keydown', e => {
+  if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+  const i = cultures.findIndex(c => c.key === current);
+  const n = (i + (e.key === 'ArrowRight' ? 1 : -1) + cultures.length) % cultures.length;
+  selectCulture(cultures[n].key); ctabBtns[n].focus();
+});
+
+let expanded = false;
+const panelEl = document.getElementById('promptPanel');
+function wordCount(s){ return s.trim().split(/\s+/).length; }
+function renderPrompt(animate){
+  const c = cultures.find(x => x.key === current);
+  const plain = fill(c.prompt, false);
+  const names = c.sectionNames || SECTIONS;
+  panelEl.innerHTML = `
+  <article class="card prompt-card${animate ? ' panel-in' : ''}" role="tabpanel" aria-labelledby="ct-${c.key}">
+    <div class="pc-strip" aria-hidden="true">${c.palette.map(p => `<i style="background:${p[1]}"></i>`).join('')}</div>
+    <div class="pc-head">
+      <div class="num">${c.num}</div>
+      <h3>${c.title}</h3>
+      <div class="theme">${c.theme}</div>
+    </div>
+    <div class="pc-body">
+      <div>
+        <p class="label-sm">Colour palette. Tap a colour to copy its hex code.</p>
+        <div class="swatches">${c.palette.map(p => `<button type="button" class="sw" data-hex="${p[1]}" aria-label="Copy ${p[0]} ${p[1]}"><span class="c" style="background:${p[1]}"></span><span class="nm">${p[0]}</span><span class="hx">${p[1]}</span></button>`).join('')}</div>
+      </div>
+      <div class="spec">
+        <div>
+          <p class="label-sm">Google Fonts</p>
+          <div class="badges">${c.fonts.map(f => `<span class="bdg font">${f}</span>`).join('')}</div>
+          <dl class="facts" style="margin-top:14px">${c.facts.map(f => `<dt>${f[0]}</dt><dd>${f[1]}</dd>`).join('')}</dl>
+        </div>
+        <div>
+          <p class="label-sm">Falling flowers by section</p>
+          <div class="badges">${c.flowers.map((f, i) => `<span class="bdg"><b>${i + 1}. ${names[i]}</b>${f}</span>`).join('')}</div>
+        </div>
+      </div>
+      <div class="codebox">
+        <div class="code-head">
+          <div><h4>Full master prompt</h4><span class="meta">${wordCount(plain)} words${anyFilled() ? ', your details filled in' : ', fill the highlighted brackets'}</span></div>
+          <button type="button" class="btn solid sm" data-copy-prompt><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>Copy full prompt</button>
+        </div>
+        <div class="code-body"><pre class="code${expanded ? ' open' : ''}" id="promptCode">${hl(fill(c.prompt, true))}</pre><div class="fade" aria-hidden="true"></div></div>
+        <div class="code-foot">
+          <button type="button" class="btn sm" data-expand aria-expanded="${expanded}">${expanded ? 'Collapse prompt' : 'Show full prompt'}</button>
+          <div class="links" style="margin:0"><a class="btn sm" href="https://claude.ai" target="_blank" rel="noopener">Open Claude</a><button type="button" class="btn solid sm" data-copy-prompt>Copy full prompt</button></div>
+        </div>
+      </div>
+      <p class="how">Paste into Claude or Gemini Canvas together with your wedding card photo, monogram and UI reference. Anything still in <span class="inline-code">[brackets]</span> is yours to fill in.</p>
+      <div class="tip" style="margin-top:0"><strong>${c.note[0]}</strong>${c.note[1]}</div>
+    </div>
+  </article>`;
+}
+panelEl.addEventListener('click', e => {
+  const sw = e.target.closest('.sw');
+  if (sw){ copy(sw.dataset.hex, 'Copied ' + sw.dataset.hex + ' ✓'); return; }
+  if (e.target.closest('[data-copy-prompt]')){
+    const c = cultures.find(x => x.key === current);
+    copy(fill(c.prompt, false), 'Copied! ✓');
+    return;
+  }
+  const ex = e.target.closest('[data-expand]');
+  if (ex){
+    expanded = !expanded;
+    const code = document.getElementById('promptCode');
+    code.classList.toggle('open', expanded);
+    ex.setAttribute('aria-expanded', expanded);
+    ex.textContent = expanded ? 'Collapse prompt' : 'Show full prompt';
+    if (!expanded) code.scrollTop = 0;
+  }
+});
+
+/* ---------- Customizer wiring ---------- */
+const toggleBtn = document.getElementById('customToggle'), bodyEl = document.getElementById('customBody');
+function setOpen(o){ toggleBtn.setAttribute('aria-expanded', o); bodyEl.classList.toggle('open', o); }
+toggleBtn.addEventListener('click', () => setOpen(toggleBtn.getAttribute('aria-expanded') !== 'true'));
+if (anyFilled()) setOpen(true);
+function updateStatus(){
+  const s = document.getElementById('fillStatus');
+  s.innerHTML = anyFilled()
+    ? '<span class="status-dot on"></span>Your details are live in all 6 prompts, highlighted in green. The date fills the main ceremony line.'
+    : '<span class="status-dot"></span>Type above and all 6 prompts update live. The date fills the main ceremony line.';
+}
+function onInput(){
+  fillState.groom = fGroom.value; fillState.bride = fBride.value; fillState.city = fCity.value; fillState.date = fDate.value;
+  store.set('wb-fill', fillState);
+  updateStatus();
+  const code = document.getElementById('promptCode');
+  const st = code ? code.scrollTop : 0;
+  renderPrompt(false);
+  const n = document.getElementById('promptCode'); if (n) n.scrollTop = st;
+}
+[fGroom, fBride, fCity, fDate].forEach(el => { el.addEventListener('input', onInput); el.addEventListener('change', onInput); });
+document.getElementById('resetFill').addEventListener('click', () => {
+  fGroom.value = fBride.value = fCity.value = fDate.value = '';
+  onInput();
+  toast('Reset to placeholders ✓');
+});
+updateStatus();
+
+/* ---------- Hosting ---------- */
+const hosts = [
+  {n:'Netlify Drop', d:'app.netlify.com/drop', url:'https://app.netlify.com/drop', kind:'Easiest', cost:'Free (₹0)', how:'Drag and drop your wedding folder directly into the browser window. Rename your subdomain free in Site Settings → Change site name.', ex:'couple-name.netlify.app'},
+  {n:'Vercel', d:'vercel.com', url:'https://vercel.com', kind:'Fastest CDN', cost:'Free (₹0)', how:'Sign up free, import your folder or GitHub repo, and click Deploy. Instant global edge caching on Indian mobile networks.', ex:'couple-wedding.vercel.app'},
+  {n:'GitHub Pages', d:'pages.github.com', url:'https://pages.github.com', kind:'Permanent', cost:'Free (₹0)', how:'Create a public repository, upload your files, and go to Settings → Pages → Deploy from main branch. Free forever.', ex:'username.github.io/invite'},
+  {n:'Tiiny.host', d:'tiiny.host', url:'https://tiiny.host', kind:'30-sec zip', cost:'Free / Paid', how:'Zip your folder, upload on the homepage, type a custom link name, and click Launch. Great for quick WhatsApp previews.', ex:'couple-invite.tiiny.site'}
+];
+document.getElementById('hosts').innerHTML = hosts.map(h => `
+  <div class="card host reveal">
+    <div class="hh"><div><h4>${h.n}</h4><div class="domain">${h.d}</div></div><div class="cost"><span class="free">${h.cost}</span><span class="kind">${h.kind}</span></div></div>
+    <p>${h.how}</p>
+    <div class="ex"><span>Example link <b>${h.ex}</b></span><a class="btn sm" href="${h.url}" target="_blank" rel="noopener">Open ${h.n}</a></div>
+  </div>`).join('');
+
+/* ---------- Tweaks ---------- */
+const tweaks = [
+  {t:'Merge into a single file', s:'For instant local & Tiiny.host testing', p:'Combine index.html, config.js, i18n.js, and all styles into one single self-contained index.html file so I can preview or drag-and-drop it directly.'},
+  {t:'Match any Pinterest / ChatGPT colour palette', s:'', p:'Keep the exact 3D gate, sections, and petal animations, but update the CSS colour palette and arch style to match the attached reference image.'},
+  {t:'Fix the WhatsApp link preview thumbnail', s:'', p:'Update the Open Graph og:image meta tag to point to https://[yourdomain]/preview.jpg and generate a matching 1200×630 SVG social preview card with the couple\'s monogram.'}
+];
+document.getElementById('tweaks').innerHTML = tweaks.map((t, i) => `
+  <div class="card tweak reveal">
+    <div class="th"><span class="n">${i + 1}</span><h4>${t.t}${t.s ? ` <span style="font-weight:500;color:var(--ink-3);font-size:13px">(${t.s})</span>` : ''}</h4></div>
+    <blockquote>${hl(t.p)}</blockquote>
+    <button type="button" class="btn sm" data-tweak="${i}">Copy prompt</button>
+  </div>`).join('');
+document.getElementById('tweaks').addEventListener('click', e => { const b = e.target.closest('[data-tweak]'); if (b) copy(tweaks[+b.dataset.tweak].p); });
+
+/* ---------- Initial route from link (#sikh, #prompts …) ---------- */
+renderPrompt(false);
+const hash = (location.hash || '').replace('#', '');
+if (hash){
+  const c = cultures.find(x => x.key === hash);
+  if (c){ selectCulture(c.key, false); setTimeout(() => go('prompts'), 120); }
+  else if (['workflow','ui','prompts','launch'].includes(hash)) setTimeout(() => go(hash), 120);
+}
+
+/* ---------- Reveal on scroll ---------- */
+const revealEls = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window){
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => { if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, {rootMargin:'0px 0px -8% 0px', threshold:.05});
+  revealEls.forEach(el => io.observe(el));
+} else revealEls.forEach(el => el.classList.add('in'));
+})();
+</script>
+</body>
+</html>
